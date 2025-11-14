@@ -189,4 +189,12 @@ Want to add more cameras or improve the map?
 
 ---
 
-![Visitor Count](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FRingmast4r%2FFLOCK&count_bg=%23FF8C00&title_bg=%23000000&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false)
+### 📊 Traffic Stats
+
+**GitHub Repo Views:**
+
+![Visitor Count](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FRingmast4r%2FFLOCK&count_bg=%23FF8C00&title_bg=%23000000&icon=&icon_color=%23E7E7E7&title=Repo+Views&edge_flat=false)
+
+**Live Map Views:**
+
+![Map Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fringmast4r.github.io%2FFLOCK%2F&count_bg=%23FF0000&title_bg=%23000000&icon=&icon_color=%23E7E7E7&title=Map+Views&edge_flat=false)
