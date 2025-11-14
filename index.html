@@ -319,6 +319,10 @@
             <div class="legend-dot" style="background: #3388ff;"></div>
             <span>Other Surveillance</span>
         </div>
+        <div class="legend-item" id="legend-police" style="display: none;">
+            <div class="legend-dot" style="background: #00ff00;"></div>
+            <span>Police Stations</span>
+        </div>
     </div>
 
     <div id="clearHighlight" onclick="clearHighlight()">✕ Clear Highlight</div>
@@ -675,6 +679,9 @@
                 sourceMarker.marker.addTo(state.map);
             }
 
+            // Track if we show any police stations
+            let policeStationsShown = false;
+
             // Process each connection
             network.connections.forEach(conn => {
                 const destKey = conn.to[0].toFixed(4) + ',' + conn.to[1].toFixed(4);
@@ -703,6 +710,7 @@
                     destMarker.marker.addTo(state.map);
                 } else {
                     // It's a police station or unknown location - create marker dynamically
+                    policeStationsShown = true;
                     const policeMarker = L.circleMarker([conn.to[0], conn.to[1]], {
                         radius: 6,
                         fillColor: '#00ff00',
@@ -720,6 +728,11 @@
                     state.networkLines.push(policeMarker); // Store for cleanup
                 }
             });
+
+            // Show police station legend item if any police stations were displayed
+            if (policeStationsShown) {
+                document.getElementById('legend-police').style.display = 'flex';
+            }
 
             console.log('Showing network:', network.connections.length, 'connections');
             document.getElementById('clearHighlight').style.display = 'block';
@@ -830,6 +843,9 @@
             // Reset info panel to default view
             document.getElementById('defaultNotice').style.display = 'block';
             document.getElementById('networkDetails').style.display = 'none';
+
+            // Hide police station legend item
+            document.getElementById('legend-police').style.display = 'none';
 
             // Remove individual markers from map
             Object.values(state.allMarkers).forEach(item => {
