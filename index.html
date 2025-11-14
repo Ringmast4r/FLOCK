@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLOCK Surveillance Network Map - 178,674 Cameras</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+        .info-panel {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            max-width: 350px;
+            z-index: 1000;
+            font-size: 13px;
+        }
+
+        .info-panel h3 {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: #ff8c00;
+            border-bottom: 2px solid #ff8c00;
+            padding-bottom: 8px;
+        }
+
+        .stat-row {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .stat-label { color: #ccc; }
+        .stat-value { font-weight: 700; color: #ff8c00; font-size: 16px; }
+
+        .button-group {
+            margin-top: 15px;
+            display: flex;
+            gap: 8px;
+            flex-direction: column;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .btn-primary { background: #ff8c00; color: white; }
+        .btn-primary:hover { background: #ff6600; }
+
+        .btn-danger { background: #ff4444; color: white; }
+        .btn-danger:hover { background: #cc0000; }
+
+        .network-notice {
+            background: rgba(255, 140, 0, 0.2);
+            border: 1px solid #ff8c00;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 30px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+            font-size: 12px;
+        }
+
+        .legend h4 { margin: 0 0 10px 0; font-size: 14px; color: #ff8c00; }
+        .legend-item {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: opacity 0.2s, background 0.2s;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .legend-item:hover { background: rgba(255, 255, 255, 0.1); }
+        .legend-item.disabled {
+            opacity: 0.3;
+            text-decoration: line-through;
+        }
+        .legend-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid white;
+        }
+
+        #clearHighlight {
+            position: fixed;
+            top: 200px;
+            right: 10px;
+            background: rgba(255, 0, 0, 0.9);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: none;
+            z-index: 1001;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        #clearHighlight:hover { background: rgba(255, 50, 50, 1); }
+
+        /* Glowing animation for Flock cameras */
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.9;
+                filter: brightness(1.2) drop-shadow(0 0 3px #ff0000);
+            }
+            50% {
+                opacity: 1;
+                filter: brightness(1.8) drop-shadow(0 0 8px #ff0000) drop-shadow(0 0 12px #ff0000);
+            }
+        }
+        .pulse-marker {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        /* Loading Spinner Animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Search Bar Styles */
+        .search-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            display: flex;
+            gap: 8px;
+        }
+
+        .search-box {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            overflow: hidden;
+        }
+
+        #searchInput {
+            border: none;
+            padding: 12px 15px;
+            font-size: 14px;
+            width: 280px;
+            outline: none;
+        }
+
+        #searchBtn {
+            background: #ff8c00;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        #searchBtn:hover {
+            background: #ff6600;
+        }
+
+        #locationBtn {
+            background: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 15px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            font-size: 18px;
+            transition: all 0.2s;
+        }
+
+        #locationBtn:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        .search-results {
+            position: absolute;
+            top: 52px;
+            left: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            width: 360px;
+        }
+
+        .search-result-item {
+            padding: 12px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+
+        .search-result-item:hover {
+            background: #f5f5f5;
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .result-details {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                flex-direction: column;
+            }
+            #searchInput {
+                width: 220px;
+            }
+            .search-results {
+                width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search city, address, or place..." />
+            <button id="searchBtn" onclick="searchLocation()">🔍 Search</button>
+        </div>
+        <button id="locationBtn" onclick="useMyLocation()" title="Use my location">📍</button>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <div class="info-panel">
+        <h3>🕸️ FLOCK Network</h3>
+        <div class="stat-row">
+            <span class="stat-label">Cameras:</span>
+            <span class="stat-value" id="cameraCount">Loading...</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Network Lines:</span>
+            <span class="stat-value">113,829</span>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-danger" onclick="showAllLines()">Show ALL Lines (Chaos!)</button>
+            <button class="btn btn-primary" onclick="clearHighlight()">Clear & Restore All</button>
+        </div>
+
+        <div class="network-notice">
+            <strong>💡 How to use:</strong><br>
+            • Click any camera → ALL others disappear<br>
+            • See ONLY that camera's network connections<br>
+            • Click "Clear & Restore All" to see all cameras again<br>
+            • Dotted lines = data sharing to other agencies
+        </div>
+    </div>
+
+    <div class="legend">
+        <h4>Device Type (Click to Toggle)</h4>
+        <div class="legend-item" id="legend-flock" onclick="toggleDeviceType('flock')">
+            <div class="legend-dot" style="background: #ff0000; animation: pulse 1.5s ease-in-out infinite; box-shadow: 0 0 8px #ff0000;"></div>
+            <span>Flock Safety (Glowing)</span>
+        </div>
+        <div class="legend-item" id="legend-alpr" onclick="toggleDeviceType('alpr')">
+            <div class="legend-dot" style="background: #9933ff;"></div>
+            <span>ALPR Cameras</span>
+        </div>
+        <div class="legend-item" id="legend-other" onclick="toggleDeviceType('other')">
+            <div class="legend-dot" style="background: #3388ff;"></div>
+            <span>Other Surveillance</span>
+        </div>
+        <div class="legend-item" id="legend-police" onclick="toggleDeviceType('police')">
+            <div class="legend-dot" style="background: #00ff00;"></div>
+            <span>Police Stations</span>
+        </div>
+    </div>
+
+    <div id="clearHighlight" onclick="clearHighlight()">✕ Clear Highlight</div>
+
+    <!-- Loading Status (Bottom Left) -->
+    <div id="loadingStatus" style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.85); color: white; padding: 12px 18px; border-radius: 6px; font-size: 12px; z-index: 1000; display: none; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 16px; height: 16px; border: 3px solid #333; border-top: 3px solid #ff8c00; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+            <span id="loadingText">Loading...</span>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <script>
+        // Global state
+        const state = {
+            map: null,
+            cameraData: null,
+            networkData: null,
+            policeData: null,
+            markerClusters: {},
+            allMarkers: {},
+            networkLines: [],
+            linesLayer: null,
+            connectionCounts: {},
+            networkViewActive: false,  // Track if we're in network view mode
+            visibleLayers: {
+                alpr: true,
+                flock: true,
+                other: true,
+                police: true
+            }
+        };
+
+        // Initialize map immediately
+        state.map = L.map('map').setView([39.8283, -98.5795], 4);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap'
+        }).addTo(state.map);
+
+        // Create lines layer
+        state.linesLayer = L.featureGroup().addTo(state.map);
+
+        // Create marker clusters - uncluster when zoomed in
+        const clusterOptions = {
+            chunkedLoading: true,
+            maxClusterRadius: 40,  // Smaller radius = breaks apart sooner
+            spiderfyOnMaxZoom: true,
+            showCoverageOnHover: false,
+            disableClusteringAtZoom: 13  // Show individual points at zoom 13+ (closer zoom)
+        };
+
+        state.markerClusters.alpr = L.markerClusterGroup(clusterOptions);
+        state.markerClusters.flock = L.markerClusterGroup(clusterOptions);
+        state.markerClusters.other = L.markerClusterGroup(clusterOptions);
+        state.markerClusters.police = L.markerClusterGroup(clusterOptions);
+
+        // Add clusters to map
+        Object.values(state.markerClusters).forEach(cluster => state.map.addLayer(cluster));
+
+        // Show loading status
+        document.getElementById('loadingStatus').style.display = 'block';
+        document.getElementById('loadingText').textContent = 'Loading camera data...';
+        document.getElementById('cameraCount').textContent = 'Loading...';
+
+        // Load all data
+        console.log('Starting data load...');
+        Promise.all([
+            fetch('CAMERAS_WITH_NETWORK_DATA.geojson').then(r => {
+                console.log('Camera data fetched');
+                return r.json();
+            }),
+            fetch('camera_networks.json').then(r => {
+                console.log('Network data fetched');
+                return r.json();
+            }),
+            fetch('police_precincts_usa.geojson').then(r => {
+                console.log('Police data fetched');
+                return r.json();
+            })
+        ]).then(([cameraData, networkData, policeData]) => {
+            console.log('All data loaded!');
+            state.cameraData = cameraData;
+            state.networkData = networkData;
+            state.policeData = policeData;
+
+            // Build connection counts
+            networkData.forEach(network => {
+                const key = network.from[0].toFixed(4) + ',' + network.from[1].toFixed(4);
+                state.connectionCounts[key] = network.connections?.length || 0;
+            });
+
+            // Process cameras in priority order: Flock -> ALPR -> Other
+            addCamerasToMapByPriority();
+
+            // Quietly load police stations in background
+            setTimeout(() => {
+                addPoliceStationsToMap();
+                console.log('Police stations added');
+            }, 100);
+
+            document.getElementById('cameraCount').textContent = cameraData.features.length.toLocaleString();
+            document.getElementById('loadingStatus').style.display = 'none';
+            console.log('MAP READY!');
+        }).catch(error => {
+            console.error('ERROR loading data:', error);
+            document.getElementById('cameraCount').textContent = 'ERROR: ' + error.message;
+            document.getElementById('loadingText').textContent = 'ERROR: ' + error.message;
+            alert('Failed to load map data: ' + error.message);
+        });
+
+        function getCameraType(props) {
+            const manufacturer = (props.manufacturer || props.brand || '').toLowerCase();
+            const survType = (props['surveillance:type'] || '').toUpperCase();
+
+            if (manufacturer.includes('flock')) return 'flock';
+            if (survType === 'ALPR') return 'alpr';
+            return 'other';
+        }
+
+        function getCameraColor(type) {
+            if (type === 'flock') return '#ff0000';  // RED for Flock (pulsing)
+            if (type === 'alpr') return '#9933ff';   // PURPLE for ALPR
+            return '#3388ff';  // BLUE for other surveillance
+        }
+
+        function addCamerasToMapByPriority() {
+            // Separate cameras by type
+            const flockCams = [];
+            const alprCams = [];
+            const otherCams = [];
+
+            state.cameraData.features.forEach(feature => {
+                const props = feature.properties || {};
+                const type = getCameraType(props);
+
+                if (type === 'flock') flockCams.push(feature);
+                else if (type === 'alpr') alprCams.push(feature);
+                else otherCams.push(feature);
+            });
+
+            // Load in priority order with messages
+            document.getElementById('loadingText').textContent = 'Adding Flock cameras...';
+            addCamerasByType(flockCams, 'flock');
+
+            setTimeout(() => {
+                document.getElementById('loadingText').textContent = 'Adding ALPR cameras...';
+                addCamerasByType(alprCams, 'alpr');
+
+                setTimeout(() => {
+                    document.getElementById('loadingText').textContent = 'Adding other cameras...';
+                    addCamerasByType(otherCams, 'other');
+                }, 50);
+            }, 50);
+        }
+
+        function addCamerasByType(features, cameraType) {
+            features.forEach(feature => {
+                const props = feature.properties || {};
+                const coords = feature.geometry.coordinates;
+                const sharingCount = parseInt(props.pe_sharing_count) || 0;
+                const color = getCameraColor(cameraType);
+
+                const marker = L.circleMarker([coords[1], coords[0]], {
+                    radius: cameraType === 'flock' ? 7 : 5,  // Flock cameras larger
+                    fillColor: color,
+                    color: '#fff',
+                    weight: cameraType === 'flock' ? 2 : 1,  // Flock has thicker border
+                    opacity: 1,
+                    fillOpacity: cameraType === 'flock' ? 0.95 : 0.7,  // Flock more opaque
+                    className: cameraType === 'flock' ? 'pulse-marker' : ''
+                });
+
+                // Add random animation delay to Flock cameras so they don't all pulse at once
+                if (cameraType === 'flock') {
+                    const randomDelay = Math.random() * 1.5; // Random delay between 0-1.5s
+                    marker.on('add', function() {
+                        const element = this.getElement();
+                        if (element) {
+                            element.style.animationDelay = randomDelay + 's';
+                        }
+                    });
+                }
+
+                // Build detailed popup - EXACT COPY from original
+                let popup = '<div style="font-size: 13px; line-height: 1.6;">';
+                popup += '<div style="font-weight: 700; font-size: 16px; margin-bottom: 12px; color: #1a1a1a; border-bottom: 2px solid #ff8c00; padding-bottom: 6px;">';
+                popup += (props.operator || 'Unknown Agency');
+                popup += '</div>';
+
+                // Network stats if available
+                if (props.pe_cameras) {
+                    popup += '<div style="margin: 12px 0; padding: 10px; background: #f5f5f5; border-radius: 4px; border-left: 3px solid #ff8c00;">';
+                    popup += '<div style="font-weight: 600; color: #666; font-size: 11px; text-transform: uppercase; margin-bottom: 8px;">Agency Statistics</div>';
+                    popup += '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">';
+
+                    popup += '<div style="background: white; padding: 8px; border-radius: 4px; text-align: center;">';
+                    popup += '<div style="font-size: 20px; font-weight: bold; color: #ff8c00;">' + props.pe_cameras + '</div>';
+                    popup += '<div style="font-size: 10px; color: #666;">Cameras</div>';
+                    popup += '</div>';
+
+                    popup += '<div style="background: white; padding: 8px; border-radius: 4px; text-align: center;">';
+                    popup += '<div style="font-size: 20px; font-weight: bold; color: #ff8c00;">' + sharingCount + '</div>';
+                    popup += '<div style="font-size: 10px; color: #666;">Partners</div>';
+                    popup += '</div>';
+
+                    if (props.pe_vehicles_detected && props.pe_vehicles_detected !== '0') {
+                        const vehicles = parseInt(props.pe_vehicles_detected).toLocaleString();
+                        popup += '<div style="background: white; padding: 8px; border-radius: 4px; text-align: center;">';
+                        popup += '<div style="font-size: 18px; font-weight: bold; color: #ff8c00;">' + vehicles + '</div>';
+                        popup += '<div style="font-size: 10px; color: #666;">Vehicles/Month</div>';
+                        popup += '</div>';
+                    }
+
+                    if (props.pe_searches && props.pe_searches !== '0') {
+                        const searches = parseInt(props.pe_searches).toLocaleString();
+                        popup += '<div style="background: white; padding: 8px; border-radius: 4px; text-align: center;">';
+                        popup += '<div style="font-size: 18px; font-weight: bold; color: #ff8c00;">' + searches + '</div>';
+                        popup += '<div style="font-size: 10px; color: #666;">Searches/Month</div>';
+                        popup += '</div>';
+                    }
+
+                    popup += '</div>';
+
+                    if (sharingCount > 0) {
+                        const connKey = coords[1].toFixed(4) + ',' + coords[0].toFixed(4);
+                        const actualConnections = state.connectionCounts[connKey] || 0;
+
+                        popup += '<div style="background: #fff3cd; border: 1px solid #ffc107; padding: 10px; border-radius: 4px; margin-top: 10px; font-size: 12px; color: #856404;">';
+                        popup += '<strong>⚠️ Network:</strong> Shares with <strong>' + sharingCount + ' agencies</strong>';
+
+                        if (actualConnections > 0 && actualConnections < sharingCount) {
+                            popup += '<br><span style="font-size: 11px; color: #666;">Can show ' + actualConnections + ' of ' + sharingCount + ' connections (locations known)</span>';
+                        } else if (actualConnections === 0) {
+                            popup += '<br><span style="font-size: 11px; color: #666;">No partner locations found (vendors/demos/unknown agencies)</span>';
+                        }
+
+                        popup += '<br><em style="font-size: 11px;">Click camera to show network lines</em>';
+                        popup += '</div>';
+                    }
+
+                    // Show ALL partners in scrollable list
+                    if (props.pe_external_orgs && props.pe_external_orgs !== 'NA') {
+                        const partners = props.pe_external_orgs.split(',');
+                        popup += '<div style="margin-top: 10px; font-weight: 600; color: #666; font-size: 11px;">All Partners (' + partners.length + '):</div>';
+                        popup += '<div style="max-height: 250px; overflow-y: auto; font-size: 11px; background: white; padding: 8px; border-radius: 4px; margin-top: 5px; border: 1px solid #ddd;">';
+                        partners.forEach(p => {
+                            popup += '• ' + p.trim() + '<br>';
+                        });
+                        popup += '</div>';
+                    }
+
+                    if (props.pe_portal_url) {
+                        popup += '<a href="' + props.pe_portal_url + '" target="_blank" style="display: inline-block; margin-top: 12px; padding: 10px 16px; background: #ff8c00; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 12px;">View Transparency Portal →</a>';
+                    }
+
+                    popup += '</div>';
+                } else if (sharingCount > 0) {
+                    popup += '<div style="margin: 10px 0; padding: 10px; background: #f5f5f5; border-radius: 4px;">';
+                    popup += 'Shares with: <strong>' + sharingCount + ' agencies</strong><br>';
+                    popup += '<em style="font-size: 11px;">Click to show network lines</em>';
+                    popup += '</div>';
+                }
+
+                // Camera details
+                if (props['surveillance:type'] || props.manufacturer) {
+                    popup += '<div style="margin: 12px 0; padding: 10px; background: #f5f5f5; border-radius: 4px;">';
+                    popup += '<div style="font-weight: 600; color: #666; font-size: 11px; margin-bottom: 5px;">Camera Details</div>';
+                    if (props['surveillance:type']) {
+                        popup += '<div><strong>Type:</strong> ' + props['surveillance:type'] + '</div>';
+                    }
+                    if (props.manufacturer || props.brand) {
+                        popup += '<div><strong>Manufacturer:</strong> ' + (props.manufacturer || props.brand) + '</div>';
+                    }
+                    popup += '</div>';
+                }
+
+                popup += '</div>';
+
+                marker.bindPopup(popup, { maxWidth: 400 });
+
+                // Add network line drawing on click
+                if (sharingCount > 0) {
+                    marker.on('click', function() {
+                        showCameraNetwork(coords[1], coords[0]);
+                    });
+                }
+
+                const markerId = coords[1] + ',' + coords[0];
+                state.allMarkers[markerId] = { marker, props, type: cameraType };
+
+                // Add to cluster group
+                state.markerClusters[cameraType].addLayer(marker);
+            });
+        }
+
+        function addPoliceStationsToMap() {
+            state.policeData.features.forEach(feature => {
+                if (!feature.geometry || !feature.geometry.type) return;
+
+                const props = feature.properties || {};
+                let lat, lon;
+
+                if (feature.geometry.type === 'Point') {
+                    lon = feature.geometry.coordinates[0];
+                    lat = feature.geometry.coordinates[1];
+                } else if (feature.geometry.type === 'Polygon') {
+                    const coords = feature.geometry.coordinates[0][0];
+                    lon = coords[0];
+                    lat = coords[1];
+                } else if (feature.geometry.type === 'MultiPolygon') {
+                    const coords = feature.geometry.coordinates[0][0][0];
+                    lon = coords[0];
+                    lat = coords[1];
+                } else {
+                    return;
+                }
+
+                const marker = L.circleMarker([lat, lon], {
+                    radius: 5,
+                    fillColor: '#00ff00',
+                    color: '#fff',
+                    weight: 1,
+                    opacity: 0.8,
+                    fillOpacity: 0.7
+                });
+
+                const popup = `<strong>Police Precinct</strong><br>
+                    <strong>District:</strong> ${props.DISTRICT || props.name || 'Unknown'}<br>
+                    <strong>City:</strong> ${props.city || 'Unknown'}`;
+                marker.bindPopup(popup);
+
+                // Store for toggling
+                const markerId = 'police_' + lat + ',' + lon;
+                state.allMarkers[markerId] = { marker, type: 'police' };
+
+                // Add to cluster group
+                state.markerClusters.police.addLayer(marker);
+            });
+        }
+
+        function showCameraNetwork(cameraLat, cameraLon) {
+            clearLines();
+
+            // Find this camera's network
+            const network = state.networkData.find(net =>
+                Math.abs(net.from[0] - cameraLat) < 0.0001 &&
+                Math.abs(net.from[1] - cameraLon) < 0.0001
+            );
+
+            if (!network || !network.connections) {
+                console.log('No network data for this camera');
+                return;
+            }
+
+            console.log('Drawing', network.connections.length, 'connections for', network.from_name);
+
+            // Mark that we're in network view mode
+            state.networkViewActive = true;
+
+            // HIDE ALL CLUSTERS
+            Object.values(state.markerClusters).forEach(cluster => {
+                state.map.removeLayer(cluster);
+            });
+
+            // ALSO remove any individual markers still on map from previous views
+            Object.values(state.allMarkers).forEach(item => {
+                state.map.removeLayer(item.marker);
+            });
+
+            // Collect coordinates of connected cameras to show
+            const connectedCoords = new Set();
+            connectedCoords.add(cameraLat.toFixed(4) + ',' + cameraLon.toFixed(4)); // Source camera
+
+            network.connections.forEach(conn => {
+                connectedCoords.add(conn.to[0].toFixed(4) + ',' + conn.to[1].toFixed(4));
+
+                // Draw network line
+                const line = L.polyline([network.from, conn.to], {
+                    color: '#ff8c00',
+                    weight: 2,
+                    opacity: 0.7,
+                    dashArray: '5, 10'
+                });
+
+                line.bindPopup(
+                    '<strong>' + network.from_name + '</strong><br>' +
+                    '⇄ shares with ⇄<br>' +
+                    '<strong>' + conn.to_name + '</strong>'
+                );
+
+                state.linesLayer.addLayer(line);
+                state.networkLines.push(line);
+            });
+
+            // SHOW ONLY the source camera and connected cameras (no clustering)
+            // Respect the visibility toggles
+            Object.entries(state.allMarkers).forEach(([key, item]) => {
+                const coordKey = key.replace('police_', '');
+                if (connectedCoords.has(coordKey)) {
+                    // Only show if this type is visible in legend
+                    if (state.visibleLayers[item.type]) {
+                        item.marker.addTo(state.map);
+                    }
+                }
+            });
+
+            document.getElementById('clearHighlight').style.display = 'block';
+        }
+
+        function showAllLines() {
+            if (!confirm('Warning: This will draw 113,829 lines and may freeze your browser. Continue?')) {
+                return;
+            }
+
+            clearLines();
+            console.log('Drawing ALL network lines...');
+
+            state.networkData.forEach(network => {
+                if (network.connections) {
+                    network.connections.forEach(conn => {
+                        const line = L.polyline([network.from, conn.to], {
+                            color: '#ff8c00',
+                            weight: 1,
+                            opacity: 0.3,
+                            dashArray: '5, 10'
+                        });
+                        state.linesLayer.addLayer(line);
+                        state.networkLines.push(line);
+                    });
+                }
+            });
+
+            document.getElementById('clearHighlight').style.display = 'block';
+        }
+
+        function clearLines() {
+            state.linesLayer.clearLayers();
+            state.networkLines = [];
+        }
+
+        function clearHighlight() {
+            clearLines();
+
+            // Exit network view mode
+            state.networkViewActive = false;
+
+            // Remove individual markers from map
+            Object.values(state.allMarkers).forEach(item => {
+                state.map.removeLayer(item.marker);
+            });
+
+            // RESTORE ALL CLUSTERS
+            Object.entries(state.markerClusters).forEach(([type, cluster]) => {
+                if (state.visibleLayers[type]) {
+                    state.map.addLayer(cluster);
+                }
+            });
+
+            document.getElementById('clearHighlight').style.display = 'none';
+        }
+
+        function toggleDeviceType(type) {
+            const legendItem = document.getElementById(`legend-${type}`);
+            const cluster = state.markerClusters[type];
+
+            if (!cluster) return;
+
+            state.visibleLayers[type] = !state.visibleLayers[type];
+
+            // Update legend visual
+            if (state.visibleLayers[type]) {
+                legendItem.classList.remove('disabled');
+            } else {
+                legendItem.classList.add('disabled');
+            }
+
+            // If we're in network view mode, toggle individual markers
+            if (state.networkViewActive) {
+                Object.entries(state.allMarkers).forEach(([key, item]) => {
+                    if (item.type === type) {
+                        if (state.visibleLayers[type]) {
+                            // Only add if it's currently supposed to be visible
+                            // (i.e., it was part of the network being shown)
+                            if (state.map.hasLayer(item.marker)) {
+                                // Already visible, do nothing
+                            } else {
+                                // Check if it should be visible (was it part of the network?)
+                                // We can't easily determine this, so we'll just leave it hidden
+                            }
+                        } else {
+                            // Hide this marker
+                            state.map.removeLayer(item.marker);
+                        }
+                    }
+                });
+            } else {
+                // Normal mode: toggle cluster layer
+                if (state.visibleLayers[type]) {
+                    state.map.addLayer(cluster);
+                } else {
+                    state.map.removeLayer(cluster);
+                }
+            }
+        }
+
+        // ========== SEARCH FUNCTIONALITY ==========
+        function searchLocation() {
+            const query = document.getElementById('searchInput').value.trim();
+            if (!query) return;
+
+            // Use Nominatim (OpenStreetMap) geocoding service
+            fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=5&addressdetails=1`)
+                .then(r => r.json())
+                .then(results => {
+                    displaySearchResults(results);
+                })
+                .catch(err => {
+                    console.error('Search error:', err);
+                    alert('Search failed. Please try again.');
+                });
+        }
+
+        function displaySearchResults(results) {
+            const container = document.getElementById('searchResults');
+
+            if (results.length === 0) {
+                container.innerHTML = '<div style="padding: 15px; color: #666;">No results found</div>';
+                container.style.display = 'block';
+                return;
+            }
+
+            container.innerHTML = results.map(result => {
+                const name = result.display_name.split(',')[0];
+                const details = result.display_name;
+                return `
+                    <div class="search-result-item" onclick="flyToLocation(${result.lat}, ${result.lon}, '${name.replace(/'/g, "\\'")}')">
+                        <div class="result-name">${name}</div>
+                        <div class="result-details">${details}</div>
+                    </div>
+                `;
+            }).join('');
+
+            container.style.display = 'block';
+        }
+
+        function flyToLocation(lat, lon, name) {
+            state.map.flyTo([lat, lon], 13, {
+                duration: 1.5
+            });
+
+            // Add temporary marker
+            const tempMarker = L.marker([lat, lon], {
+                icon: L.divIcon({
+                    className: 'temp-location-marker',
+                    html: '📍',
+                    iconSize: [30, 30]
+                })
+            }).addTo(state.map);
+
+            tempMarker.bindPopup(`<strong>${name}</strong><br>Your searched location`).openPopup();
+
+            // Remove after 5 seconds
+            setTimeout(() => {
+                state.map.removeLayer(tempMarker);
+            }, 5000);
+
+            // Hide search results
+            document.getElementById('searchResults').style.display = 'none';
+        }
+
+        function useMyLocation() {
+            if (!navigator.geolocation) {
+                alert('Geolocation is not supported by your browser');
+                return;
+            }
+
+            const btn = document.getElementById('locationBtn');
+            btn.textContent = '⌛';
+            btn.disabled = true;
+
+            navigator.geolocation.getCurrentPosition(
+                position => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+
+                    state.map.flyTo([lat, lon], 13, {
+                        duration: 1.5
+                    });
+
+                    const marker = L.marker([lat, lon], {
+                        icon: L.divIcon({
+                            className: 'temp-location-marker',
+                            html: '📍',
+                            iconSize: [30, 30]
+                        })
+                    }).addTo(state.map);
+
+                    marker.bindPopup('<strong>Your Location</strong>').openPopup();
+
+                    setTimeout(() => {
+                        state.map.removeLayer(marker);
+                    }, 5000);
+
+                    btn.textContent = '📍';
+                    btn.disabled = false;
+                },
+                error => {
+                    alert('Unable to get your location: ' + error.message);
+                    btn.textContent = '📍';
+                    btn.disabled = false;
+                }
+            );
+        }
+
+        // Search on Enter key
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('searchInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    searchLocation();
+                }
+            });
+
+            // Hide search results when clicking outside
+            document.addEventListener('click', (e) => {
+                const container = document.getElementById('searchResults');
+                const searchBox = document.querySelector('.search-container');
+                if (!searchBox.contains(e.target)) {
+                    container.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
