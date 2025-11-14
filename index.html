@@ -23,6 +23,8 @@
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             max-width: 350px;
+            max-height: 85vh;
+            overflow-y: auto;
             z-index: 1000;
             font-size: 13px;
         }
@@ -270,7 +272,7 @@
         <div class="search-results" id="searchResults"></div>
     </div>
 
-    <div class="info-panel">
+    <div class="info-panel" id="infoPanel">
         <h3>🕸️ FLOCK Network</h3>
         <div class="stat-row">
             <span class="stat-label">Cameras:</span>
@@ -286,12 +288,20 @@
             <button class="btn btn-primary" onclick="clearHighlight()">Clear & Restore All</button>
         </div>
 
-        <div class="network-notice">
+        <div class="network-notice" id="defaultNotice">
             <strong>💡 How to use:</strong><br>
             • Click any camera → ALL others disappear<br>
             • See ONLY that camera's network connections<br>
             • Click "Clear & Restore All" to see all cameras again<br>
             • Dotted lines = data sharing to other agencies
+        </div>
+
+        <!-- Network Details Panel (shown when camera clicked) -->
+        <div id="networkDetails" style="display: none; margin-top: 15px;">
+            <div style="border-top: 2px solid #ff8c00; padding-top: 15px;">
+                <h4 style="margin: 0 0 10px 0; color: #ff8c00; font-size: 16px;" id="networkTitle">📹 Camera Network</h4>
+                <div id="networkInfo" style="font-size: 12px; line-height: 1.8;"></div>
+            </div>
         </div>
     </div>
 
@@ -617,6 +627,9 @@
             // Mark that we're in network view mode
             state.networkViewActive = true;
 
+            // Update the info panel with network details
+            updateNetworkDetailsPanel(network);
+
             // HIDE ALL CLUSTERS
             Object.values(state.markerClusters).forEach(cluster => {
                 state.map.removeLayer(cluster);
@@ -684,6 +697,35 @@
             document.getElementById('clearHighlight').style.display = 'block';
         }
 
+        function updateNetworkDetailsPanel(network) {
+            // Hide default notice, show network details
+            document.getElementById('defaultNotice').style.display = 'none';
+            document.getElementById('networkDetails').style.display = 'block';
+
+            // Update title
+            document.getElementById('networkTitle').textContent = '📹 ' + network.from_name;
+
+            // Build connections list
+            let html = '';
+            html += '<div style="margin-bottom: 12px;">';
+            html += '<strong style="color: #ff8c00;">Total Connections: ' + network.connections.length + '</strong>';
+            html += '</div>';
+
+            html += '<div style="max-height: 400px; overflow-y: auto; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 4px;">';
+            html += '<div style="font-weight: 600; margin-bottom: 8px; color: #ccc;">Data Sharing With:</div>';
+
+            network.connections.forEach((conn, idx) => {
+                html += '<div style="padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">';
+                html += '<div style="color: #fff; font-weight: 500;">' + (idx + 1) + '. ' + conn.to_name + '</div>';
+                html += '<div style="color: #999; font-size: 11px; margin-top: 2px;">📍 ' + conn.to[0].toFixed(4) + ', ' + conn.to[1].toFixed(4) + '</div>';
+                html += '</div>';
+            });
+
+            html += '</div>';
+
+            document.getElementById('networkInfo').innerHTML = html;
+        }
+
         function showAllLines() {
             if (!confirm('Warning: This will draw 113,829 lines and may freeze your browser. Continue?')) {
                 return;
@@ -726,6 +768,10 @@
 
             // Exit network view mode
             state.networkViewActive = false;
+
+            // Reset info panel to default view
+            document.getElementById('defaultNotice').style.display = 'block';
+            document.getElementById('networkDetails').style.display = 'none';
 
             // Remove individual markers from map
             Object.values(state.allMarkers).forEach(item => {
