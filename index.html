@@ -727,29 +727,53 @@
         }
 
         function showAllLines() {
-            if (!confirm('Warning: This will draw 113,829 lines and may freeze your browser. Continue?')) {
-                return;
+            clearLines();
+            console.log('Drawing ALL network lines progressively...');
+
+            // Show loading indicator
+            document.getElementById('loadingStatus').style.display = 'block';
+            document.getElementById('loadingText').textContent = 'Drawing network lines...';
+
+            let networkIndex = 0;
+            const batchSize = 500; // Draw 500 lines at a time
+
+            function drawBatch() {
+                const endIndex = Math.min(networkIndex + batchSize, state.networkData.length);
+
+                for (let i = networkIndex; i < endIndex; i++) {
+                    const network = state.networkData[i];
+                    if (network.connections) {
+                        network.connections.forEach(conn => {
+                            const line = L.polyline([network.from, conn.to], {
+                                color: '#ff8c00',
+                                weight: 1,
+                                opacity: 0.3,
+                                dashArray: '5, 10'
+                            });
+                            state.linesLayer.addLayer(line);
+                            state.networkLines.push(line);
+                        });
+                    }
+                }
+
+                networkIndex = endIndex;
+
+                // Update progress
+                const progress = Math.round((networkIndex / state.networkData.length) * 100);
+                document.getElementById('loadingText').textContent = `Drawing network lines... ${progress}%`;
+
+                if (networkIndex < state.networkData.length) {
+                    // Continue drawing in next frame
+                    setTimeout(drawBatch, 10);
+                } else {
+                    // Done
+                    document.getElementById('loadingStatus').style.display = 'none';
+                    document.getElementById('clearHighlight').style.display = 'block';
+                    console.log('Finished drawing all network lines');
+                }
             }
 
-            clearLines();
-            console.log('Drawing ALL network lines...');
-
-            state.networkData.forEach(network => {
-                if (network.connections) {
-                    network.connections.forEach(conn => {
-                        const line = L.polyline([network.from, conn.to], {
-                            color: '#ff8c00',
-                            weight: 1,
-                            opacity: 0.3,
-                            dashArray: '5, 10'
-                        });
-                        state.linesLayer.addLayer(line);
-                        state.networkLines.push(line);
-                    });
-                }
-            });
-
-            document.getElementById('clearHighlight').style.display = 'block';
+            drawBatch();
         }
 
         function clearLines() {
