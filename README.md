@@ -191,5 +191,8 @@ Want to add more cameras or improve the map?
 
 ### 📊 Traffic Stats
 
-![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=Ringmast4r.FLOCK)
-[![GitHub Views](https://komarev.com/ghpvc/?username=Ringmast4r&repo=FLOCK&color=ff8c00&label=Repo+Views)](https://github.com/Ringmast4r/FLOCK)
+<a href="https://hits.sh/github.com/Ringmast4r/FLOCK/"><img alt="Hits" src="https://hits.sh/github.com/Ringmast4r/FLOCK.svg?style=for-the-badge&label=Visitors&color=ff8c00"/></a>
+
+---
+
+Brought to you by Ringmast4r 😘
