@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-16.1803535, 64.0455682]}, "properties": {"id": 1584192223, "man_made": "surveillance", "surveillance": "outdoor", "was:website": "http://live.mila.is/jokulsarlon/", "data_source": "planet_osm"}}], "networks": []}

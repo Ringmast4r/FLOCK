@@ -333,6 +333,8 @@
             linesLayer: null,
             connectionCounts: {},
             networkViewActive: false,  // Track if we're in network view mode
+            tileIndex: null,  // Tile index for on-demand loading
+            loadedTiles: new Set(),  // Track which tiles are loaded
             visibleLayers: {
                 alpr: true,
                 flock: true,
@@ -388,43 +390,121 @@
         document.getElementById('loadingText').textContent = 'Loading camera data...';
         document.getElementById('cameraCount').textContent = 'Loading...';
 
-        // Load ONLY cameras and network data initially (skip police stations for speed)
-        console.log('Starting data load...');
-        Promise.all([
-            fetch('CAMERAS_WITH_NETWORK_DATA.geojson').then(r => {
-                console.log('Camera data fetched');
-                return r.json();
-            }),
-            fetch('camera_networks.json').then(r => {
-                console.log('Network data fetched');
-                return r.json();
-            })
-        ]).then(([cameraData, networkData]) => {
-            console.log('All data loaded!');
-            state.cameraData = cameraData;
-            state.networkData = networkData;
+        // TILE-BASED LOADING: Load only visible tiles instead of all 178K cameras
+        console.log('Starting tile-based data load...');
 
-            // Build connection counts
-            networkData.forEach(network => {
-                const key = network.from[0].toFixed(4) + ',' + network.from[1].toFixed(4);
-                state.connectionCounts[key] = network.connections?.length || 0;
+        // Initialize tile state
+        state.tileIndex = null;
+        state.loadedTiles = new Set();
+        state.cameraData = { type: 'FeatureCollection', features: [] };
+        state.networkData = [];
+
+        // Load tile index first
+        fetch('data/tiles/index.json')
+            .then(r => r.json())
+            .then(tileIndex => {
+                console.log('Tile index loaded:', Object.keys(tileIndex.tiles).length, 'tiles available');
+                state.tileIndex = tileIndex;
+
+                // Load initial tiles based on current viewport
+                loadVisibleTiles();
+
+                // Load more tiles when map moves or zooms
+                state.map.on('moveend', loadVisibleTiles);
+                state.map.on('zoomend', loadVisibleTiles);
+
+                document.getElementById('loadingStatus').style.display = 'none';
+                document.getElementById('cameraCount').textContent = tileIndex.total_cameras.toLocaleString();
+                console.log('MAP READY with tile-based loading!');
+            })
+            .catch(error => {
+                console.error('ERROR loading tile index:', error);
+                document.getElementById('cameraCount').textContent = 'ERROR: ' + error.message;
+                document.getElementById('loadingText').textContent = 'ERROR: ' + error.message;
+                alert('Failed to load map data: ' + error.message);
             });
 
-            console.log('Networks ready:', Object.keys(state.connectionCounts).length);
+        function latLonToTile(lat, lon, zoom) {
+            const latRad = lat * Math.PI / 180;
+            const n = Math.pow(2, zoom);
+            const xtile = Math.floor((lon + 180) / 360 * n);
+            const ytile = Math.floor((1 - Math.asinh(Math.tan(latRad)) / Math.PI) / 2 * n);
+            return { x: xtile, y: ytile };
+        }
 
-            // Process cameras in priority order: Flock -> ALPR -> Other
-            addCamerasToMapByPriority();
+        function getVisibleTiles() {
+            if (!state.tileIndex) return [];
 
-            // Update camera count after filtering
-            updateCameraCount();
-            document.getElementById('loadingStatus').style.display = 'none';
-            console.log('MAP READY!');
-        }).catch(error => {
-            console.error('ERROR loading data:', error);
-            document.getElementById('cameraCount').textContent = 'ERROR: ' + error.message;
-            document.getElementById('loadingText').textContent = 'ERROR: ' + error.message;
-            alert('Failed to load map data: ' + error.message);
-        });
+            const bounds = state.map.getBounds();
+            const zoom = state.tileIndex.zoom; // Always use zoom 6 for tiles
+
+            const nw = latLonToTile(bounds.getNorth(), bounds.getWest(), zoom);
+            const se = latLonToTile(bounds.getSouth(), bounds.getEast(), zoom);
+
+            const tiles = [];
+            for (let x = nw.x; x <= se.x; x++) {
+                for (let y = nw.y; y <= se.y; y++) {
+                    const tileKey = `${zoom}/${x}/${y}`;
+                    if (state.tileIndex.tiles[tileKey]) {
+                        tiles.push(tileKey);
+                    }
+                }
+            }
+
+            return tiles;
+        }
+
+        function loadVisibleTiles() {
+            const visibleTiles = getVisibleTiles();
+            const tilesToLoad = visibleTiles.filter(tile => !state.loadedTiles.has(tile));
+
+            if (tilesToLoad.length === 0) {
+                console.log('All visible tiles already loaded');
+                return;
+            }
+
+            console.log(`Loading ${tilesToLoad.length} new tiles...`);
+            document.getElementById('loadingStatus').style.display = 'block';
+            document.getElementById('loadingText').textContent = `Loading ${tilesToLoad.length} tiles...`;
+
+            Promise.all(tilesToLoad.map(tileKey => {
+                const tilePath = state.tileIndex.tiles[tileKey].path;
+                return fetch(tilePath)
+                    .then(r => r.json())
+                    .then(tileData => {
+                        state.loadedTiles.add(tileKey);
+                        return tileData;
+                    })
+                    .catch(err => {
+                        console.error(`Failed to load tile ${tileKey}:`, err);
+                        return null;
+                    });
+            })).then(tiles => {
+                // Merge tile data
+                tiles.forEach(tileData => {
+                    if (!tileData) return;
+
+                    // Add cameras
+                    state.cameraData.features.push(...tileData.features);
+
+                    // Add networks
+                    state.networkData.push(...tileData.networks);
+                });
+
+                // Rebuild connection counts
+                state.connectionCounts = {};
+                state.networkData.forEach(network => {
+                    const key = network.from[0].toFixed(4) + ',' + network.from[1].toFixed(4);
+                    state.connectionCounts[key] = network.connections?.length || 0;
+                });
+
+                // Add new cameras to map
+                addCamerasToMapByPriority();
+
+                document.getElementById('loadingStatus').style.display = 'none';
+                console.log(`Loaded ${tilesToLoad.length} tiles. Total cameras: ${state.cameraData.features.length}`);
+            });
+        }
 
         function updateCameraCount() {
             const totalCount = state.cameraData.features.length;
@@ -447,12 +527,18 @@
         }
 
         function addCamerasToMapByPriority() {
-            // Separate cameras by type
+            // Separate NEW cameras by type (skip already-added cameras)
             const flockCams = [];
             const alprCams = [];
             const otherCams = [];
 
             state.cameraData.features.forEach(feature => {
+                const coords = feature.geometry.coordinates;
+                const markerKey = coords[1].toFixed(4) + ',' + coords[0].toFixed(4);
+
+                // Skip if already added
+                if (state.allMarkers[markerKey]) return;
+
                 const props = feature.properties || {};
                 const type = getCameraType(props);
 
@@ -461,17 +547,28 @@
                 else otherCams.push(feature);
             });
 
+            // Only process if there are new cameras
+            if (flockCams.length === 0 && alprCams.length === 0 && otherCams.length === 0) {
+                return;
+            }
+
             // Load in priority order with messages
-            document.getElementById('loadingText').textContent = 'Adding Flock cameras...';
-            addCamerasByType(flockCams, 'flock');
+            if (flockCams.length > 0) {
+                document.getElementById('loadingText').textContent = `Adding ${flockCams.length} Flock cameras...`;
+                addCamerasByType(flockCams, 'flock');
+            }
 
             setTimeout(() => {
-                document.getElementById('loadingText').textContent = 'Adding ALPR cameras...';
-                addCamerasByType(alprCams, 'alpr');
+                if (alprCams.length > 0) {
+                    document.getElementById('loadingText').textContent = `Adding ${alprCams.length} ALPR cameras...`;
+                    addCamerasByType(alprCams, 'alpr');
+                }
 
                 setTimeout(() => {
-                    document.getElementById('loadingText').textContent = 'Adding other cameras...';
-                    addCamerasByType(otherCams, 'other');
+                    if (otherCams.length > 0) {
+                        document.getElementById('loadingText').textContent = `Adding ${otherCams.length} other cameras...`;
+                        addCamerasByType(otherCams, 'other');
+                    }
                 }, 50);
             }, 50);
         }
