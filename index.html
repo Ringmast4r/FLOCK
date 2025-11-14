@@ -346,11 +346,20 @@
             linesLayer: null,
             connectionCounts: {},
             networkViewActive: false,  // Track if we're in network view mode
+            usOnlyMode: true,  // Show only US cameras by default
             visibleLayers: {
                 alpr: true,
                 flock: true,
                 other: true
             }
+        };
+
+        // US bounds for filtering
+        const US_BOUNDS = {
+            minLat: 24,
+            maxLat: 50,
+            minLon: -125,
+            maxLon: -66
         };
 
         // Initialize map immediately
@@ -410,7 +419,8 @@
             // Process cameras in priority order: Flock -> ALPR -> Other
             addCamerasToMapByPriority();
 
-            document.getElementById('cameraCount').textContent = cameraData.features.length.toLocaleString();
+            // Update camera count after filtering
+            updateCameraCount();
             document.getElementById('loadingStatus').style.display = 'none';
             console.log('MAP READY!');
         }).catch(error => {
@@ -419,6 +429,18 @@
             document.getElementById('loadingText').textContent = 'ERROR: ' + error.message;
             alert('Failed to load map data: ' + error.message);
         });
+
+        function updateCameraCount() {
+            const displayedCount = Object.keys(state.allMarkers).length;
+            const totalCount = state.cameraData.features.length;
+
+            if (state.usOnlyMode) {
+                document.getElementById('cameraCount').textContent =
+                    `${displayedCount.toLocaleString()} (US only)`;
+            } else {
+                document.getElementById('cameraCount').textContent = totalCount.toLocaleString();
+            }
+        }
 
         function getCameraType(props) {
             const manufacturer = (props.manufacturer || props.brand || '').toLowerCase();
@@ -469,6 +491,17 @@
             features.forEach(feature => {
                 const props = feature.properties || {};
                 const coords = feature.geometry.coordinates;
+
+                // Skip if US-only mode and camera is outside US bounds
+                if (state.usOnlyMode) {
+                    const lat = coords[1];
+                    const lon = coords[0];
+                    if (lat < US_BOUNDS.minLat || lat > US_BOUNDS.maxLat ||
+                        lon < US_BOUNDS.minLon || lon > US_BOUNDS.maxLon) {
+                        return; // Skip this camera
+                    }
+                }
+
                 const sharingCount = parseInt(props.pe_sharing_count) || 0;
                 const color = getCameraColor(cameraType);
 
