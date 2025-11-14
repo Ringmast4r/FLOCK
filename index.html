@@ -72,11 +72,53 @@
             }
 
             .legend {
-                bottom: 10px;
-                right: 10px;
-                font-size: 11px;
-                padding: 10px;
+                bottom: 5px;
+                left: 5px;
+                right: 5px;
+                font-size: 9px;
+                padding: 6px 8px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                gap: 4px;
             }
+
+            .legend h4 {
+                display: none;
+            }
+
+            .legend-item {
+                margin: 0;
+                padding: 4px;
+                flex: 1;
+                justify-content: center;
+                font-size: 9px;
+            }
+
+            .legend-dot {
+                width: 10px;
+                height: 10px;
+                margin-right: 3px;
+                border-width: 1px;
+            }
+
+            .legend-text-full {
+                display: none;
+            }
+
+            .legend-text-short {
+                display: inline;
+            }
+        }
+
+        /* Desktop - show full text, hide short */
+        .legend-text-full {
+            display: inline;
+        }
+
+        .legend-text-short {
+            display: none;
         }
 
         .info-panel h3 {
@@ -346,19 +388,23 @@
         <h4>Device Type (Click to Toggle)</h4>
         <div class="legend-item" id="legend-flock" onclick="toggleDeviceType('flock')">
             <div class="legend-dot" style="background: #ff0000; animation: pulse 1.5s ease-in-out infinite; box-shadow: 0 0 8px #ff0000;"></div>
-            <span>Flock Safety (Glowing)</span>
+            <span class="legend-text-full">Flock Safety (Glowing)</span>
+            <span class="legend-text-short">Flock</span>
         </div>
         <div class="legend-item" id="legend-alpr" onclick="toggleDeviceType('alpr')">
             <div class="legend-dot" style="background: #9933ff;"></div>
-            <span>ALPR Cameras</span>
+            <span class="legend-text-full">ALPR Cameras</span>
+            <span class="legend-text-short">ALPR</span>
         </div>
         <div class="legend-item" id="legend-other" onclick="toggleDeviceType('other')">
             <div class="legend-dot" style="background: #3388ff;"></div>
-            <span>Other Surveillance</span>
+            <span class="legend-text-full">Other Surveillance</span>
+            <span class="legend-text-short">Other</span>
         </div>
         <div class="legend-item" id="legend-police" style="display: none;">
             <div class="legend-dot" style="background: #00ff00;"></div>
-            <span>Police Stations</span>
+            <span class="legend-text-full">Police Stations</span>
+            <span class="legend-text-short">Police</span>
         </div>
     </div>
 
