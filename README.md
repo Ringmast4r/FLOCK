@@ -2,9 +2,9 @@
 
 > Interactive map visualizing 178,674+ surveillance cameras and their data-sharing networks across the United States
 
-**Live Demo**: *(Your GitHub Pages URL will go here)*
+**🌐 Live Demo**: https://ringmast4r.github.io/FLOCK/
 
-![FLOCK Network Map Preview](https://via.placeholder.com/800x400/000000/ff8c00?text=FLOCK+Surveillance+Network+Map)
+**📂 Repository**: https://github.com/Ringmast4r/FLOCK
 
 ---
 
@@ -177,12 +177,16 @@ Want to add more cameras or improve the map?
 
 ## 📈 Project Stats
 
-![GitHub Stars](https://img.shields.io/github/stars/YOUR_USERNAME/discord-flock?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/YOUR_USERNAME/discord-flock?style=social)
-![GitHub Issues](https://img.shields.io/github/issues/YOUR_USERNAME/discord-flock)
+![GitHub Stars](https://img.shields.io/github/stars/Ringmast4r/FLOCK?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/Ringmast4r/FLOCK?style=social)
+![GitHub Issues](https://img.shields.io/github/issues/Ringmast4r/FLOCK)
 
 **Made with ❤️ for privacy awareness**
 
 ---
 
 **Disclaimer**: This is an educational project for public awareness. Use responsibly.
+
+---
+
+![Visitor Count](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FRingmast4r%2FFLOCK&count_bg=%23FF8C00&title_bg=%23000000&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false)
