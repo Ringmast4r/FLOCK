@@ -114,21 +114,6 @@
             border: 2px solid white;
         }
 
-        #clearHighlight {
-            position: fixed;
-            top: 200px;
-            right: 10px;
-            background: rgba(255, 0, 0, 0.9);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            display: none;
-            z-index: 1001;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-        #clearHighlight:hover { background: rgba(255, 50, 50, 1); }
 
         /* Glowing animation for Flock cameras */
         @keyframes pulse {
@@ -324,8 +309,6 @@
             <span>Police Stations</span>
         </div>
     </div>
-
-    <div id="clearHighlight" onclick="clearHighlight()">✕ Clear Highlight</div>
 
     <!-- Loading Status (Bottom Left) -->
     <div id="loadingStatus" style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.85); color: white; padding: 12px 18px; border-radius: 6px; font-size: 12px; z-index: 1000; display: none; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
@@ -735,7 +718,6 @@
             }
 
             console.log('Showing network:', network.connections.length, 'connections');
-            document.getElementById('clearHighlight').style.display = 'block';
         }
 
         function updateNetworkDetailsPanel(network, networkColor) {
@@ -815,7 +797,6 @@
                 } else {
                     // Done
                     document.getElementById('loadingStatus').style.display = 'none';
-                    document.getElementById('clearHighlight').style.display = 'block';
                     console.log('Finished drawing all network lines');
                 }
             }
@@ -858,8 +839,6 @@
                     state.map.addLayer(cluster);
                 }
             });
-
-            document.getElementById('clearHighlight').style.display = 'none';
         }
 
         function toggleDeviceType(type) {
