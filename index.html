@@ -341,6 +341,7 @@
             linesLayer: null,
             connectionCounts: {},
             networkViewActive: false,  // Track if we're in network view mode
+            policeStationsInNetwork: new Set(),  // Track which police stations are actually used
             visibleLayers: {
                 alpr: true,
                 flock: true,
@@ -401,16 +402,26 @@
             state.networkData = networkData;
             state.policeData = policeData;
 
-            // Build connection counts
+            // Build connection counts AND identify police stations in network
             networkData.forEach(network => {
                 const key = network.from[0].toFixed(4) + ',' + network.from[1].toFixed(4);
                 state.connectionCounts[key] = network.connections?.length || 0;
+
+                // Track all destination coordinates (police stations and cameras)
+                if (network.connections) {
+                    network.connections.forEach(conn => {
+                        const destKey = conn.to[0].toFixed(4) + ',' + conn.to[1].toFixed(4);
+                        state.policeStationsInNetwork.add(destKey);
+                    });
+                }
             });
+
+            console.log('Police stations in network:', state.policeStationsInNetwork.size);
 
             // Process cameras in priority order: Flock -> ALPR -> Other
             addCamerasToMapByPriority();
 
-            // Quietly load police stations in background
+            // Quietly load ONLY police stations that are in the network
             setTimeout(() => {
                 addPoliceStationsToMap();
                 console.log('Police stations added');
@@ -603,7 +614,8 @@
                     });
                 }
 
-                const markerId = coords[1] + ',' + coords[0];
+                // Store with 4-decimal precision for matching with network data
+                const markerId = coords[1].toFixed(4) + ',' + coords[0].toFixed(4);
                 state.allMarkers[markerId] = { marker, props, type: cameraType };
 
                 // Add to cluster group
@@ -612,6 +624,8 @@
         }
 
         function addPoliceStationsToMap() {
+            let addedCount = 0;
+
             state.policeData.features.forEach(feature => {
                 if (!feature.geometry || !feature.geometry.type) return;
 
@@ -633,6 +647,12 @@
                     return;
                 }
 
+                // ONLY add this police station if it's in the network
+                const coordKey = lat.toFixed(4) + ',' + lon.toFixed(4);
+                if (!state.policeStationsInNetwork.has(coordKey)) {
+                    return; // Skip this station - not in any Flock network
+                }
+
                 const marker = L.circleMarker([lat, lon], {
                     radius: 5,
                     fillColor: '#00ff00',
@@ -642,18 +662,21 @@
                     fillOpacity: 0.7
                 });
 
-                const popup = `<strong>Police Precinct</strong><br>
+                const popup = `<strong>Police Precinct (Receives Flock Data)</strong><br>
                     <strong>District:</strong> ${props.DISTRICT || props.name || 'Unknown'}<br>
                     <strong>City:</strong> ${props.city || 'Unknown'}`;
                 marker.bindPopup(popup);
 
                 // Store for toggling
-                const markerId = 'police_' + lat + ',' + lon;
-                state.allMarkers[markerId] = { marker, type: 'police' };
+                const markerId = 'police_' + lat.toFixed(4) + ',' + lon.toFixed(4);
+                state.allMarkers[markerId] = { marker, type: 'police', props };
 
                 // Add to cluster group
                 state.markerClusters.police.addLayer(marker);
+                addedCount++;
             });
+
+            console.log('Added', addedCount, 'police stations that receive Flock camera data');
         }
 
         function showCameraNetwork(cameraLat, cameraLon) {
@@ -685,12 +708,15 @@
                 state.map.removeLayer(item.marker);
             });
 
-            // Collect coordinates of connected cameras to show
+            // Collect coordinates of connected cameras/stations to show
             const connectedCoords = new Set();
-            connectedCoords.add(cameraLat.toFixed(4) + ',' + cameraLon.toFixed(4)); // Source camera
+            const sourceCameraKey = cameraLat.toFixed(4) + ',' + cameraLon.toFixed(4);
+            connectedCoords.add(sourceCameraKey); // Source camera
 
             network.connections.forEach(conn => {
-                connectedCoords.add(conn.to[0].toFixed(4) + ',' + conn.to[1].toFixed(4));
+                const destKey = conn.to[0].toFixed(4) + ',' + conn.to[1].toFixed(4);
+                connectedCoords.add(destKey);
+                connectedCoords.add('police_' + destKey); // Also check police prefix
 
                 // Draw network line
                 const line = L.polyline([network.from, conn.to], {
@@ -702,7 +728,7 @@
 
                 line.bindPopup(
                     '<strong>' + network.from_name + '</strong><br>' +
-                    '⇄ shares with ⇄<br>' +
+                    '⇄ shares data with ⇄<br>' +
                     '<strong>' + conn.to_name + '</strong>'
                 );
 
@@ -710,18 +736,21 @@
                 state.networkLines.push(line);
             });
 
-            // SHOW ONLY the source camera and connected cameras (no clustering)
-            // Respect the visibility toggles
+            console.log('Network destinations:', connectedCoords.size - 1, 'points');
+
+            // SHOW the source camera and ALL connected destinations
+            let shownMarkers = 0;
             Object.entries(state.allMarkers).forEach(([key, item]) => {
-                const coordKey = key.replace('police_', '');
-                if (connectedCoords.has(coordKey)) {
+                if (connectedCoords.has(key)) {
                     // Only show if this type is visible in legend
                     if (state.visibleLayers[item.type]) {
                         item.marker.addTo(state.map);
+                        shownMarkers++;
                     }
                 }
             });
 
+            console.log('Showing', shownMarkers, 'markers in network view');
             document.getElementById('clearHighlight').style.display = 'block';
         }
 

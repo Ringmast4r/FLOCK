@@ -62,11 +62,10 @@ discord-flock/
 
 | Color | Type | Description |
 |-------|------|-------------|
-| 🔴 Red | ALPR Cameras | Automatic License Plate Readers |
-| 🟡 Gold | Flock Safety | Flock Safety brand cameras |
-| 🟠 Orange | High Network | Cameras sharing with 50+ organizations |
+| 🔴 Red (Glowing) | Flock Safety | Flock Safety brand cameras (pulsing effect) |
+| 🟣 Purple | ALPR Cameras | Automatic License Plate Readers |
 | 🔵 Blue | Other Surveillance | General surveillance cameras |
-| 🟢 Green | Police Precincts | Police stations/districts |
+| 🟢 Green | Police Stations | Stations receiving Flock camera data |
 
 ## 💡 How to Use
 
@@ -107,76 +106,14 @@ discord-flock/
 
 All data is from publicly available sources:
 
-- **[DeFlock.me](https://deflock.me/)**: Community-sourced surveillance camera locations
 - **[OpenStreetMap](https://www.openstreetmap.org/)**: Open-source mapping data with surveillance tags
-- **Public Records**: FOIA requests and public documents
 - **[EFF Atlas of Surveillance](https://atlasofsurveillance.org/)**: Electronic Frontier Foundation database
+- **[McClatchy Private Eyes](https://github.com/mcclatchy-southeast/private_eyes)**: Investigative journalism ALPR database
+- **[DeFlock.me](https://deflock.me/)**: Community-sourced Flock Safety camera locations
 
 ### Data Freshness
 - Last updated: November 2025
-- Recommend re-downloading data monthly for active regions
-
-## 🛠️ Deployment to GitHub Pages
-
-### Step 1: Create Repository
-1. Go to https://github.com/new
-2. Name: `discord-flock` (or your choice)
-3. Set to **Public**
-4. Don't initialize with README
-
-### Step 2: Push Code
-```bash
-cd C:\Users\Squir\Desktop\discord-flock
-
-# Initialize git
-git init
-
-# Add files
-git add .
-
-# Commit
-git commit -m "Initial commit: FLOCK surveillance network map"
-
-# Add remote
-git remote add origin https://github.com/YOUR_USERNAME/discord-flock.git
-
-# Push
-git branch -M main
-git push -u origin main
-```
-
-### Step 3: Enable GitHub Pages
-1. Go to repository **Settings**
-2. Click **Pages** (left sidebar)
-3. Under **Source**:
-   - Branch: `main`
-   - Folder: `/ (root)`
-4. Click **Save**
-5. Wait 2-5 minutes for deployment
-
-Your map will be live at:
-```
-https://YOUR_USERNAME.github.io/discord-flock/
-```
-
-## ⚠️ Important Notes
-
-### File Size Limits
-GitHub has the following limits:
-- ✅ Files up to 100MB allowed
-- ⚠️ Files 50-100MB show warning
-- ❌ Files over 100MB rejected
-
-Our files:
-- `CAMERAS_WITH_NETWORK_DATA.geojson` (62MB) ✅
-- `camera_networks.json` (16MB) ✅
-- `police_precincts_usa.geojson` (13MB) ✅
-
-### Loading Time
-Expect these loading times:
-- **Fast (100 Mbps)**: 10-15 seconds
-- **Average (25 Mbps)**: 30-45 seconds
-- **Slow (5 Mbps)**: 2-3 minutes
+- Dataset includes network sharing data between law enforcement agencies
 
 ## 🔒 Privacy & Ethics
 
