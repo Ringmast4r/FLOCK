@@ -309,9 +309,8 @@
             <div class="legend-dot" style="background: #3388ff;"></div>
             <span>Other Surveillance</span>
         </div>
-        <div class="legend-item" id="legend-police" onclick="toggleDeviceType('police')">
-            <div class="legend-dot" style="background: #00ff00;"></div>
-            <span>Police Stations</span>
+        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #444; font-size: 11px; color: #aaa;">
+            🟢 Police stations shown in network view
         </div>
     </div>
 
@@ -334,19 +333,16 @@
             map: null,
             cameraData: null,
             networkData: null,
-            policeData: null,
             markerClusters: {},
             allMarkers: {},
             networkLines: [],
             linesLayer: null,
             connectionCounts: {},
             networkViewActive: false,  // Track if we're in network view mode
-            policeStationsInNetwork: new Set(),  // Track which police stations are actually used
             visibleLayers: {
                 alpr: true,
                 flock: true,
-                other: true,
-                police: true
+                other: true
             }
         };
 
@@ -371,7 +367,6 @@
         state.markerClusters.alpr = L.markerClusterGroup(clusterOptions);
         state.markerClusters.flock = L.markerClusterGroup(clusterOptions);
         state.markerClusters.other = L.markerClusterGroup(clusterOptions);
-        state.markerClusters.police = L.markerClusterGroup(clusterOptions);
 
         // Add clusters to map
         Object.values(state.markerClusters).forEach(cluster => state.map.addLayer(cluster));
@@ -381,7 +376,7 @@
         document.getElementById('loadingText').textContent = 'Loading camera data...';
         document.getElementById('cameraCount').textContent = 'Loading...';
 
-        // Load all data
+        // Load ONLY cameras and network data initially (skip police stations for speed)
         console.log('Starting data load...');
         Promise.all([
             fetch('CAMERAS_WITH_NETWORK_DATA.geojson').then(r => {
@@ -391,41 +386,22 @@
             fetch('camera_networks.json').then(r => {
                 console.log('Network data fetched');
                 return r.json();
-            }),
-            fetch('police_precincts_usa.geojson').then(r => {
-                console.log('Police data fetched');
-                return r.json();
             })
-        ]).then(([cameraData, networkData, policeData]) => {
+        ]).then(([cameraData, networkData]) => {
             console.log('All data loaded!');
             state.cameraData = cameraData;
             state.networkData = networkData;
-            state.policeData = policeData;
 
-            // Build connection counts AND identify police stations in network
+            // Build connection counts
             networkData.forEach(network => {
                 const key = network.from[0].toFixed(4) + ',' + network.from[1].toFixed(4);
                 state.connectionCounts[key] = network.connections?.length || 0;
-
-                // Track all destination coordinates (police stations and cameras)
-                if (network.connections) {
-                    network.connections.forEach(conn => {
-                        const destKey = conn.to[0].toFixed(4) + ',' + conn.to[1].toFixed(4);
-                        state.policeStationsInNetwork.add(destKey);
-                    });
-                }
             });
 
-            console.log('Police stations in network:', state.policeStationsInNetwork.size);
+            console.log('Networks ready:', Object.keys(state.connectionCounts).length);
 
             // Process cameras in priority order: Flock -> ALPR -> Other
             addCamerasToMapByPriority();
-
-            // Quietly load ONLY police stations that are in the network
-            setTimeout(() => {
-                addPoliceStationsToMap();
-                console.log('Police stations added');
-            }, 100);
 
             document.getElementById('cameraCount').textContent = cameraData.features.length.toLocaleString();
             document.getElementById('loadingStatus').style.display = 'none';
@@ -607,7 +583,7 @@
 
                 marker.bindPopup(popup, { maxWidth: 400 });
 
-                // Add network line drawing on click
+                // Add network line drawing on click for ANY camera with network data
                 if (sharingCount > 0) {
                     marker.on('click', function() {
                         showCameraNetwork(coords[1], coords[0]);
@@ -623,61 +599,7 @@
             });
         }
 
-        function addPoliceStationsToMap() {
-            let addedCount = 0;
-
-            state.policeData.features.forEach(feature => {
-                if (!feature.geometry || !feature.geometry.type) return;
-
-                const props = feature.properties || {};
-                let lat, lon;
-
-                if (feature.geometry.type === 'Point') {
-                    lon = feature.geometry.coordinates[0];
-                    lat = feature.geometry.coordinates[1];
-                } else if (feature.geometry.type === 'Polygon') {
-                    const coords = feature.geometry.coordinates[0][0];
-                    lon = coords[0];
-                    lat = coords[1];
-                } else if (feature.geometry.type === 'MultiPolygon') {
-                    const coords = feature.geometry.coordinates[0][0][0];
-                    lon = coords[0];
-                    lat = coords[1];
-                } else {
-                    return;
-                }
-
-                // ONLY add this police station if it's in the network
-                const coordKey = lat.toFixed(4) + ',' + lon.toFixed(4);
-                if (!state.policeStationsInNetwork.has(coordKey)) {
-                    return; // Skip this station - not in any Flock network
-                }
-
-                const marker = L.circleMarker([lat, lon], {
-                    radius: 5,
-                    fillColor: '#00ff00',
-                    color: '#fff',
-                    weight: 1,
-                    opacity: 0.8,
-                    fillOpacity: 0.7
-                });
-
-                const popup = `<strong>Police Precinct (Receives Flock Data)</strong><br>
-                    <strong>District:</strong> ${props.DISTRICT || props.name || 'Unknown'}<br>
-                    <strong>City:</strong> ${props.city || 'Unknown'}`;
-                marker.bindPopup(popup);
-
-                // Store for toggling
-                const markerId = 'police_' + lat.toFixed(4) + ',' + lon.toFixed(4);
-                state.allMarkers[markerId] = { marker, type: 'police', props };
-
-                // Add to cluster group
-                state.markerClusters.police.addLayer(marker);
-                addedCount++;
-            });
-
-            console.log('Added', addedCount, 'police stations that receive Flock camera data');
-        }
+        // Police stations are created dynamically when showing network (not loaded upfront for speed)
 
         function showCameraNetwork(cameraLat, cameraLon) {
             clearLines();
@@ -708,15 +630,16 @@
                 state.map.removeLayer(item.marker);
             });
 
-            // Collect coordinates of connected cameras/stations to show
-            const connectedCoords = new Set();
+            // SHOW the source camera first
             const sourceCameraKey = cameraLat.toFixed(4) + ',' + cameraLon.toFixed(4);
-            connectedCoords.add(sourceCameraKey); // Source camera
+            const sourceMarker = state.allMarkers[sourceCameraKey];
+            if (sourceMarker) {
+                sourceMarker.marker.addTo(state.map);
+            }
 
+            // Process each connection
             network.connections.forEach(conn => {
                 const destKey = conn.to[0].toFixed(4) + ',' + conn.to[1].toFixed(4);
-                connectedCoords.add(destKey);
-                connectedCoords.add('police_' + destKey); // Also check police prefix
 
                 // Draw network line
                 const line = L.polyline([network.from, conn.to], {
@@ -734,23 +657,33 @@
 
                 state.linesLayer.addLayer(line);
                 state.networkLines.push(line);
-            });
 
-            console.log('Network destinations:', connectedCoords.size - 1, 'points');
+                // Check if this destination is a camera we already have
+                const destMarker = state.allMarkers[destKey];
+                if (destMarker) {
+                    // It's a camera - show it
+                    destMarker.marker.addTo(state.map);
+                } else {
+                    // It's a police station or unknown location - create marker dynamically
+                    const policeMarker = L.circleMarker([conn.to[0], conn.to[1]], {
+                        radius: 6,
+                        fillColor: '#00ff00',
+                        color: '#fff',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
 
-            // SHOW the source camera and ALL connected destinations
-            let shownMarkers = 0;
-            Object.entries(state.allMarkers).forEach(([key, item]) => {
-                if (connectedCoords.has(key)) {
-                    // Only show if this type is visible in legend
-                    if (state.visibleLayers[item.type]) {
-                        item.marker.addTo(state.map);
-                        shownMarkers++;
-                    }
+                    const popup = `<strong>📍 ${conn.to_name}</strong><br>
+                        <span style="color: #666; font-size: 12px;">Receives data from Flock camera network</span>`;
+                    policeMarker.bindPopup(popup);
+
+                    policeMarker.addTo(state.map);
+                    state.networkLines.push(policeMarker); // Store for cleanup
                 }
             });
 
-            console.log('Showing', shownMarkers, 'markers in network view');
+            console.log('Showing network:', network.connections.length, 'connections');
             document.getElementById('clearHighlight').style.display = 'block';
         }
 
@@ -782,6 +715,12 @@
 
         function clearLines() {
             state.linesLayer.clearLayers();
+            // Also remove any dynamically created markers (police stations)
+            state.networkLines.forEach(item => {
+                if (item.removeFrom) {
+                    state.map.removeLayer(item);
+                }
+            });
             state.networkLines = [];
         }
 
