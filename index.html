@@ -362,6 +362,24 @@
             maxLon: -66
         };
 
+        // Generate a unique color for each network based on camera location
+        function getNetworkColor(lat, lon, name) {
+            // Create a hash from coordinates and name
+            const str = `${lat.toFixed(4)},${lon.toFixed(4)},${name}`;
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                hash = str.charCodeAt(i) + ((hash << 5) - hash);
+                hash = hash & hash; // Convert to 32-bit integer
+            }
+
+            // Generate vibrant colors (avoid too dark or too light)
+            const hue = Math.abs(hash % 360);
+            const saturation = 70 + (Math.abs(hash >> 8) % 20); // 70-90%
+            const lightness = 50 + (Math.abs(hash >> 16) % 15); // 50-65%
+
+            return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+        }
+
         // Initialize map immediately
         state.map = L.map('map').setView([39.8283, -98.5795], 4);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -660,8 +678,12 @@
             // Mark that we're in network view mode
             state.networkViewActive = true;
 
+            // Generate unique color for this network
+            const networkColor = getNetworkColor(cameraLat, cameraLon, network.from_name);
+            console.log('Network color:', networkColor);
+
             // Update the info panel with network details
-            updateNetworkDetailsPanel(network);
+            updateNetworkDetailsPanel(network, networkColor);
 
             // HIDE ALL CLUSTERS
             Object.values(state.markerClusters).forEach(cluster => {
@@ -684,11 +706,11 @@
             network.connections.forEach(conn => {
                 const destKey = conn.to[0].toFixed(4) + ',' + conn.to[1].toFixed(4);
 
-                // Draw network line
+                // Draw network line with unique color
                 const line = L.polyline([network.from, conn.to], {
-                    color: '#ff8c00',
+                    color: networkColor,
                     weight: 2,
-                    opacity: 0.7,
+                    opacity: 0.8,
                     dashArray: '5, 10'
                 });
 
@@ -730,18 +752,21 @@
             document.getElementById('clearHighlight').style.display = 'block';
         }
 
-        function updateNetworkDetailsPanel(network) {
+        function updateNetworkDetailsPanel(network, networkColor) {
             // Hide default notice, show network details
             document.getElementById('defaultNotice').style.display = 'none';
             document.getElementById('networkDetails').style.display = 'block';
 
-            // Update title
-            document.getElementById('networkTitle').textContent = '📹 ' + network.from_name;
+            // Update title with color indicator
+            document.getElementById('networkTitle').innerHTML =
+                '📹 ' + network.from_name +
+                ' <span style="display: inline-block; width: 12px; height: 12px; background: ' + networkColor +
+                '; border-radius: 50%; margin-left: 8px; vertical-align: middle;"></span>';
 
             // Build connections list
             let html = '';
             html += '<div style="margin-bottom: 12px;">';
-            html += '<strong style="color: #ff8c00;">Total Connections: ' + network.connections.length + '</strong>';
+            html += '<strong style="color: ' + networkColor + ';">Total Connections: ' + network.connections.length + '</strong>';
             html += '</div>';
 
             html += '<div style="max-height: 400px; overflow-y: auto; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 4px;">';
@@ -776,11 +801,14 @@
                 for (let i = networkIndex; i < endIndex; i++) {
                     const network = state.networkData[i];
                     if (network.connections) {
+                        // Generate unique color for this network
+                        const networkColor = getNetworkColor(network.from[0], network.from[1], network.from_name);
+
                         network.connections.forEach(conn => {
                             const line = L.polyline([network.from, conn.to], {
-                                color: '#ff8c00',
+                                color: networkColor,
                                 weight: 1,
-                                opacity: 0.3,
+                                opacity: 0.4,
                                 dashArray: '5, 10'
                             });
                             state.linesLayer.addLayer(line);
