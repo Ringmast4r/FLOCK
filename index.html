@@ -588,7 +588,7 @@
 
                 popup += '</div>';
 
-                marker.bindPopup(popup, { maxWidth: 400 });
+                marker.bindPopup(popup, { maxWidth: 500, minWidth: 400 });
 
                 // Add network line drawing on click for ANY camera with network data
                 if (sharingCount > 0) {
