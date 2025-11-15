@@ -1,6 +1,6 @@
 # FLOCK Surveillance Network Map
 
-> Interactive map visualizing 178,674+ surveillance cameras and their data-sharing networks across the United States
+> Interactive map visualizing 336,708+ surveillance cameras and their data-sharing networks worldwide
 
 **🌐 Live Demo**: https://ringmast4r.github.io/FLOCK/
 
@@ -10,21 +10,24 @@
 
 ## 🎯 Overview
 
-This map visualizes the massive surveillance infrastructure across the United States, showing:
-- **178,674 surveillance cameras** from public databases
+This map visualizes the massive global surveillance infrastructure, showing:
+- **336,708 surveillance cameras** from public databases worldwide
 - **Network connections** showing data sharing between law enforcement agencies
 - **Police precincts** and their surveillance camera networks
 - **ALPR (Automatic License Plate Reader)** cameras
 - **Flock Safety** camera installations
+- **Global coverage**: United States, Europe, Asia, Africa, Oceania, Americas
 
 ## ✨ Features
 
 - 🗺️ **Interactive Map**: Pan, zoom, and click cameras to explore
+- 🌍 **Global Coverage**: 336K+ cameras across all continents
 - 🕸️ **Network Visualization**: See data-sharing connections between cameras
 - 🎨 **Color-Coded Markers**: Different colors for ALPR, Flock, and other surveillance types
-- 📊 **Marker Clustering**: Efficient rendering of 178K+ markers
+- 📊 **Marker Clustering**: Efficient rendering of 336K+ markers
+- 🗂️ **Tile-Based Loading**: Fast performance with on-demand tile loading
 - 📱 **Mobile Responsive**: Works on all devices
-- ⚡ **Fast Loading**: Optimized for quick loading (24KB HTML)
+- ⚡ **Fast Loading**: Optimized with geographic tiling
 - 🔍 **Detailed Popups**: Click any marker for detailed information
 
 ## 🚀 Quick Start
@@ -50,13 +53,14 @@ python -m http.server 8000
 ```
 discord-flock/
 ├── index.html                          (25KB - Main HTML file)
+├── data/tiles/                         (Tiled camera data for fast loading)
 ├── camera_networks.json                (16MB - Network connections data)
-├── CAMERAS_WITH_NETWORK_DATA.geojson   (62MB - Camera locations)
+├── CAMERAS_WITH_NETWORK_DATA.geojson   (102MB - Master camera dataset, local only)
 ├── police_precincts_usa.geojson        (13MB - Police precinct boundaries)
 └── README.md                           (This file)
 ```
 
-**Total Size**: ~91MB
+**Note**: Master GeoJSON kept local only (exceeds GitHub 100MB limit). Map loads from optimized tiles.
 
 ## 🎨 Map Legend
 
@@ -77,11 +81,19 @@ discord-flock/
 
 ## 📊 Statistics
 
-- **Total Cameras**: 178,674
+- **Total Cameras**: 336,708 (worldwide)
 - **Network Connections**: 113,829+ data-sharing connections
 - **Police Precincts**: Thousands of precincts mapped
 - **Data Sources**: OpenStreetMap, DeFlock.me, public records
-- **Geographic Coverage**: All 50 US states
+- **Geographic Coverage**: Global (United States, Europe, Asia, Africa, Oceania, Americas)
+  - Europe: 246,000+ cameras
+  - United States: 75,000+ cameras
+  - Canada: 28,000+ cameras
+  - Asia: 19,000+ cameras
+  - Central America: 13,000+ cameras
+  - South America: 9,000+ cameras
+  - Oceania: 3,000+ cameras
+  - Africa: 2,000+ cameras
 
 ## 🔧 Technical Details
 
@@ -91,10 +103,12 @@ discord-flock/
 - [OpenStreetMap](https://www.openstreetmap.org/) - Base map tiles
 
 ### Performance
-- **HTML Size**: 24KB (99.97% smaller than original)
-- **Data Loading**: Asynchronous with progress indicators
-- **Chunked Processing**: Processes 5,000 cameras at a time
-- **Memory Efficient**: ~500MB RAM usage
+- **HTML Size**: 25KB
+- **Tile-Based Loading**: Geographic tiles load on-demand based on viewport
+- **512 Optimized Tiles**: Data split across zoom level 6 tiles
+- **Fast Initial Load**: Only visible tiles loaded (<2MB typical)
+- **Memory Efficient**: Loads only what you see
+- **Marker Clustering**: Efficient rendering of 336K+ points
 
 ### Browser Support
 - ✅ Chrome/Edge (recommended)
