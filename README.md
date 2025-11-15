@@ -4,8 +4,6 @@
 
 **🌐 Live Demo**: https://ringmast4r.github.io/FLOCK/
 
-**📂 Repository**: https://github.com/Ringmast4r/FLOCK
-
 ---
 
 ## 🎯 Overview
