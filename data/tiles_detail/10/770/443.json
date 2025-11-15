@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [90.9943312, 23.489669]}, "properties": {"id": 3784970357, "camera:mount": "pole", "camera:type": "fixed", "man_made": "surveillance", "operator": "Comilla PBS-1", "surveillance": "outdoor", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

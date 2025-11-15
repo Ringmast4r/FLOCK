@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-112.1338381, 34.3392265]}, "properties": {"camera:type": "Flock Safety", "direction": "270", "man_made": "surveillance", "manufacturer": "wikidata=Q108485435", "surveillance": "traffic", "surveillance:type": "ALPR", "surveillance:zone": "ALPR"}}], "networks": []}

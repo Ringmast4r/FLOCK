@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-163.4108856, 64.6819287]}, "properties": {"id": 6348373278, "camera:type": "panning", "description": "White Mountain school web camera", "man_made": "surveillance", "surveillance": "webcam", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

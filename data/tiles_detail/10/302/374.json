@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-73.7093472, 43.4209759]}, "properties": {"camera:type": "dome", "contact:webcam": "http://lakegeorgesteamboat.com/about/webcam/", "man_made": "surveillance", "name": "Camera", "surveillance": "public", "surveillance:type": "camera"}}], "networks": []}

@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.0664297, 31.0858035]}, "properties": {"camera:mount": "pole", "camera:type": "fixed", "direction": "210", "man_made": "surveillance", "manufacturer": "Flock", "surveillance": "traffic", "surveillance:type": "ALPR", "surveillance:zone": "traffic"}}], "networks": []}

@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [36.3762006, 0.0385781]}, "properties": {"id": 6241778055, "man_made": "surveillance", "surveillance": "Hippopotamus_Watching_Point", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

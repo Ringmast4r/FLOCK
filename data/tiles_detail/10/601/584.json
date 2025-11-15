@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [31.5362321, -24.7083492]}, "properties": {"id": 7500861577, "camera:mount": "tree", "camera:type": "panning", "man_made": "surveillance", "name": "Djuma Waterhole", "surveillance": "outdoor", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

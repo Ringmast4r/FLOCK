@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [28.2452395, -25.7359709]}, "properties": {"id": 25967023, "man_made": "surveillance", "name": "CCTV camera", "surveillance": "outdoor", "data_source": "planet_osm"}}], "networks": []}

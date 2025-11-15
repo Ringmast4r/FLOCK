@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-115.8991868, 37.5940187]}, "properties": {"camera:mount": "pole", "description": "Remote Controlled Camera", "ele": "1555", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "camera"}}], "networks": []}

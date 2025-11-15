@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [67.0881961, 24.9084273]}, "properties": {"id": 4762522257, "man_made": "surveillance", "name": "Omex Systems", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

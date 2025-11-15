@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-94.6315169, 36.8195268]}, "properties": {"direction": "255", "man_made": "surveillance", "surveillance": "traffic", "surveillance:type": "ALPR", "surveillance:zone": "traffic"}}], "networks": []}

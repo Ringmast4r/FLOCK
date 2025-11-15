@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [112.6794391, -7.4216261]}, "properties": {"id": 6932323082, "contact:webcam": "rtsp://888888:888888@103.189.235.10:554/cam/realmonitor?channel=37&subtype=1", "man_made": "surveillance", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

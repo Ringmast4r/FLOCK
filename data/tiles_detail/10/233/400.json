@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-97.9421631, 36.3903807]}, "properties": {"direction": "145", "man_made": "surveillance", "manufacturer": "Flock Safety", "operator": "Lowes", "surveillance": "outdoor", "surveillance:type": "ALPR", "surveillance:zone": "traffic"}}], "networks": []}

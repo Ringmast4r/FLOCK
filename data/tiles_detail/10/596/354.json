@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [29.8675846, 48.3365168]}, "properties": {"id": 7815050702, "direction": "360", "man_made": "surveillance", "surveillance": "public", "surveillance:type": "ALPR", "surveillance:zone": "traffic", "data_source": "planet_osm"}}], "networks": []}

@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [15.2139834, 38.7926847]}, "properties": {"id": 3407845206, "man_made": "surveillance", "operator": "INGV", "surveillance:type": "camera", "surveillance:zone": "monitoring", "data_source": "planet_osm"}}], "networks": []}

@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [13.8490286, 46.3789368]}, "properties": {"id": 4508891800, "contact:webcam": "https://vreme.arso.gov.si/napoved/Ljubljana/kamere?cam=Kredarica&direction=e", "man_made": "surveillance", "surveillance": "webcam", "data_source": "planet_osm"}}], "networks": []}

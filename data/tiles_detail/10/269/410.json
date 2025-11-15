@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-85.1045624, 33.625468]}, "properties": {"direction": "150", "man_made": "surveillance", "manufacturer": "Flock Safety", "operator": "Carroll County Sheriff", "surveillance": "public", "surveillance:type": "ALPR", "surveillance:zone": "traffic"}}], "networks": []}

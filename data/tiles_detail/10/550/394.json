@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [13.4334216, 38.0862546]}, "properties": {"id": 1167005993, "camera:mount": "pole", "camera:type": "dome", "check_date": "2024-02-07", "man_made": "surveillance", "surveillance": "public", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

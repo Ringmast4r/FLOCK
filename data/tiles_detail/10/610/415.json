@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [34.7741153, 32.0985737]}, "properties": {"id": 533062849, "camera:direction": "180", "man_made": "surveillance", "surveillance:type": "QCam", "data_source": "planet_osm"}}], "networks": []}

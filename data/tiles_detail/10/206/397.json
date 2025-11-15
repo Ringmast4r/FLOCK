@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-107.2548021, 37.2088639]}, "properties": {"camera:direction": "79", "camera:mount": "pole", "camera:type": "fixed", "direction": "79", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "ALPR"}}], "networks": []}

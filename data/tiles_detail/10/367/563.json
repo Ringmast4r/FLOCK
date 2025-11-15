@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-50.9139722, -17.7762271]}, "properties": {"id": 6145683735, "description": "C41", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "guard", "surveillance:zone": "police", "data_source": "planet_osm"}}], "networks": []}

@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [22.1369012, 51.5581501]}, "properties": {"id": 7299276806, "camera:type": "dome", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "camera", "surveillance:zone": "parking", "data_source": "planet_osm"}}], "networks": []}

@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-122.9364561, 48.4855926]}, "properties": {"man_made": "surveillance", "operator": "Port of Lopez", "surveillance": "outside", "surveillance:type": "camera"}}], "networks": []}

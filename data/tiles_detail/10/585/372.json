@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [25.9876572, 43.9756821]}, "properties": {"id": 2032392896, "amenity": "fuel", "brand": "Lukoil", "brand:wikidata": "Q329347", "brand:wikipedia": "en:Lukoil", "man_made": "surveillance", "name": "LukOil", "operator": "LukOil", "data_source": "planet_osm"}}], "networks": []}

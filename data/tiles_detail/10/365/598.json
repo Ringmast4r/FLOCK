@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-51.343058, -29.2199186]}, "properties": {"id": 1272002292, "highway": "speed_camera", "man_made": "surveillance", "maxspeed": "50", "data_source": "planet_osm"}}], "networks": []}

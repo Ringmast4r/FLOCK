@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-96.2538276, 37.6043014]}, "properties": {"description": "ALPR Facing South", "direction": "180", "man_made": "surveillance", "surveillance": "traffic", "surveillance:type": "ALPR", "surveillance:zone": "traffic"}}], "networks": []}

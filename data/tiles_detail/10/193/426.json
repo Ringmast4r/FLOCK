@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-112.0271373, 28.8597929]}, "properties": {"camera:direction": "360", "camera:mount": "pole", "camera:type": "panning", "height": "12", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "camera", "surveillance:zone": "town"}}], "networks": []}

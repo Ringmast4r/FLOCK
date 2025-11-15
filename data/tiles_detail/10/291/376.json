@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-77.59172, 42.9511059]}, "properties": {"man_made": "surveillance", "surveillance": "goverment", "surveillance:type": "guard", "surveillance:zone": "govement"}}], "networks": []}

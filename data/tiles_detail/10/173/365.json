@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-119.0148513, 45.7182124]}, "properties": {"man_made": "surveillance", "surveillance:type": "camera", "website": "https://www.tripcheck.com/Pages/CCentry.asp"}}], "networks": []}

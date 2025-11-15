@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [13.7274489, 50.1046552]}, "properties": {"id": 1972571201, "contact:webcam": "https://cbcnet.cz/o-nas/kamera/", "direction": "105", "man_made": "surveillance", "name": "CBC camera", "surveillance": "webcam", "data_source": "planet_osm"}}], "networks": []}

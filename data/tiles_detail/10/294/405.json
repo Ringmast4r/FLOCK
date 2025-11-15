@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-76.3166198, 35.0167163]}, "properties": {"camera:mount": "building", "camera:type": "panning", "man_made": "surveillance", "surveillance": "webcam", "surveillance:type": "camera", "surveillance:zone": "street"}}], "networks": []}

@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-102.461089, 33.8237799]}, "properties": {"man_made": "surveillance", "monitoring:water_level": "yes", "surveillance": "camera"}}], "networks": []}

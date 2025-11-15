@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [15.629471, 46.5523199]}, "properties": {"id": 5481416023, "amenity": "atm", "drive_through": "no", "man_made": "surveillance", "operator": "Abanka", "data_source": "planet_osm"}}], "networks": []}

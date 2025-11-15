@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [3.876091, 47.661041]}, "properties": {"id": 3658020371, "camera:mount": "wall", "camera:type": "panning", "man_made": "surveillance", "surveillance:type": "camera", "surveillance:zone": "building", "data_source": "planet_osm"}}], "networks": []}

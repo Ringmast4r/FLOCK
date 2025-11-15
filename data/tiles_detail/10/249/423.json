@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-92.368869, 29.6276557]}, "properties": {"camera:mount": "pole", "camera:type": "panning", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "camera", "surveillance:zone": "entrance"}}], "networks": []}

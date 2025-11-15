@@ -494,38 +494,39 @@
         document.getElementById('loadingText').textContent = 'Loading camera data...';
         document.getElementById('cameraCount').textContent = 'Loading...';
 
-        // ZOOM-LEVEL AGGREGATION: Load appropriate data based on zoom level
-        console.log('Starting zoom-based data load...');
+        // TILE-BASED LOADING: Load only visible tiles instead of all 178K cameras
+        console.log('Starting tile-based data load...');
 
-        // Initialize state
+        // Initialize tile state
         state.tileIndex = null;
         state.loadedTiles = new Set();
         state.cameraData = { type: 'FeatureCollection', features: [] };
         state.networkData = [];
-        state.currentZoomLevel = null;
-        state.aggregateLayer = L.layerGroup().addTo(state.map);
 
-        // Set camera count
-        document.getElementById('cameraCount').textContent = '178,674';
+        // Load tile index first
+        fetch('data/tiles/index.json')
+            .then(r => r.json())
+            .then(tileIndex => {
+                console.log('Tile index loaded:', Object.keys(tileIndex.tiles).length, 'tiles available');
+                state.tileIndex = tileIndex;
 
-        // Load appropriate data based on zoom
-        loadDataForCurrentZoom();
+                // Load initial tiles based on current viewport
+                loadVisibleTiles();
 
-        // Reload when zoom changes
-        state.map.on('zoomend', () => {
-            loadDataForCurrentZoom();
-        });
+                // Load more tiles when map moves or zooms
+                state.map.on('moveend', loadVisibleTiles);
+                state.map.on('zoomend', loadVisibleTiles);
 
-        // Load more detail tiles when panning at high zoom
-        state.map.on('moveend', () => {
-            const zoom = state.map.getZoom();
-            if (zoom >= 10) {
-                loadVisibleDetailTiles();
-            }
-        });
-
-        document.getElementById('loadingStatus').style.display = 'none';
-        console.log('MAP READY with zoom-based loading!');
+                document.getElementById('loadingStatus').style.display = 'none';
+                document.getElementById('cameraCount').textContent = tileIndex.total_cameras.toLocaleString();
+                console.log('MAP READY with tile-based loading!');
+            })
+            .catch(error => {
+                console.error('ERROR loading tile index:', error);
+                document.getElementById('cameraCount').textContent = 'ERROR: ' + error.message;
+                document.getElementById('loadingText').textContent = 'ERROR: ' + error.message;
+                alert('Failed to load map data: ' + error.message);
+            });
 
         function latLonToTile(lat, lon, zoom) {
             const latRad = lat * Math.PI / 180;
@@ -557,135 +558,16 @@
             return tiles;
         }
 
-        function loadDataForCurrentZoom() {
-            const zoom = state.map.getZoom();
-
-            // Clear aggregate layer
-            state.aggregateLayer.clearLayers();
-
-            // Clear cluster layers
-            Object.values(state.markerClusters).forEach(cluster => cluster.clearLayers());
-
-            if (zoom <= 6) {
-                // ZOOM 4-6: Show state aggregates
-                loadStateAggregates();
-            } else if (zoom <= 9) {
-                // ZOOM 7-9: Show grid aggregates
-                loadGridAggregates();
-            } else {
-                // ZOOM 10+: Show detail tiles
-                loadVisibleDetailTiles();
-            }
-        }
-
-        function loadStateAggregates() {
-            console.log('Loading state aggregates...');
-            document.getElementById('loadingText').textContent = 'Loading state summaries...';
-            document.getElementById('loadingStatus').style.display = 'block';
-
-            fetch('data/aggregates/states.json')
-                .then(r => r.json())
-                .then(data => {
-                    data.features.forEach(feature => {
-                        const props = feature.properties;
-                        const coords = feature.geometry.coordinates;
-
-                        // Create large marker for state
-                        const radius = Math.min(50, Math.max(15, props.total / 500));
-                        const marker = L.circleMarker([coords[1], coords[0]], {
-                            radius: radius,
-                            fillColor: '#ff8c00',
-                            color: '#fff',
-                            weight: 2,
-                            opacity: 1,
-                            fillOpacity: 0.6
-                        });
-
-                        marker.bindPopup(`
-                            <div style="font-size: 13px">
-                                <strong>${props.state}</strong><br>
-                                <strong style="color: #ff8c00; font-size: 18px;">${props.total.toLocaleString()}</strong> cameras<br>
-                                <span style="color: #ff0000;">⬤ ${props.flock.toLocaleString()} Flock</span><br>
-                                <span style="color: #9933ff;">⬤ ${props.alpr.toLocaleString()} ALPR</span><br>
-                                <span style="color: #3388ff;">⬤ ${props.other.toLocaleString()} Other</span><br>
-                                <small style="color: #666;">Zoom in to see individual cameras</small>
-                            </div>
-                        `);
-
-                        state.aggregateLayer.addLayer(marker);
-                    });
-
-                    document.getElementById('loadingStatus').style.display = 'none';
-                    console.log('State aggregates loaded');
-                })
-                .catch(err => console.error('Failed to load state aggregates:', err));
-        }
-
-        function loadGridAggregates() {
-            console.log('Loading grid aggregates...');
-            document.getElementById('loadingText').textContent = 'Loading grid summaries...';
-            document.getElementById('loadingStatus').style.display = 'block';
-
-            fetch('data/aggregates/grid.json')
-                .then(r => r.json())
-                .then(data => {
-                    data.features.forEach(feature => {
-                        const props = feature.properties;
-                        const coords = feature.geometry.coordinates;
-
-                        // Create medium marker for grid
-                        const radius = Math.min(30, Math.max(8, props.total / 100));
-                        const marker = L.circleMarker([coords[1], coords[0]], {
-                            radius: radius,
-                            fillColor: '#ff8c00',
-                            color: '#fff',
-                            weight: 2,
-                            opacity: 1,
-                            fillOpacity: 0.5
-                        });
-
-                        marker.bindPopup(`
-                            <div style="font-size: 12px">
-                                <strong>Grid ${props.grid}</strong><br>
-                                <strong style="color: #ff8c00; font-size: 16px;">${props.total.toLocaleString()}</strong> cameras<br>
-                                <span style="color: #ff0000;">⬤ ${props.flock.toLocaleString()} Flock</span><br>
-                                <span style="color: #9933ff;">⬤ ${props.alpr.toLocaleString()} ALPR</span><br>
-                                <span style="color: #3388ff;">⬤ ${props.other.toLocaleString()} Other</span><br>
-                                <small style="color: #666;">Zoom in to see individual cameras</small>
-                            </div>
-                        `);
-
-                        state.aggregateLayer.addLayer(marker);
-                    });
-
-                    document.getElementById('loadingStatus').style.display = 'none';
-                    console.log('Grid aggregates loaded');
-                })
-                .catch(err => console.error('Failed to load grid aggregates:', err));
-        }
-
-        function loadVisibleDetailTiles() {
-            // Load tile index if not loaded
-            if (!state.tileIndex) {
-                fetch('data/tiles_detail/index.json')
-                    .then(r => r.json())
-                    .then(tileIndex => {
-                        state.tileIndex = tileIndex;
-                        loadVisibleDetailTiles(); // Retry
-                    })
-                    .catch(err => console.error('Failed to load tile index:', err));
-                return;
-            }
-
+        function loadVisibleTiles() {
             const visibleTiles = getVisibleTiles();
             const tilesToLoad = visibleTiles.filter(tile => !state.loadedTiles.has(tile));
 
             if (tilesToLoad.length === 0) {
-                console.log('All visible detail tiles already loaded');
+                console.log('All visible tiles already loaded');
                 return;
             }
 
-            console.log(`Loading ${tilesToLoad.length} detail tiles...`);
+            console.log(`Loading ${tilesToLoad.length} new tiles...`);
             document.getElementById('loadingStatus').style.display = 'block';
             document.getElementById('loadingText').textContent = `Loading ${tilesToLoad.length} tiles...`;
 
@@ -702,14 +584,14 @@
                         return null;
                     });
             })).then(tiles => {
-                // Clear existing camera data for fresh load
-                state.cameraData.features = [];
-                state.networkData = [];
-
                 // Merge tile data
                 tiles.forEach(tileData => {
                     if (!tileData) return;
+
+                    // Add cameras
                     state.cameraData.features.push(...tileData.features);
+
+                    // Add networks
                     state.networkData.push(...tileData.networks);
                 });
 
@@ -720,11 +602,11 @@
                     state.connectionCounts[key] = network.connections?.length || 0;
                 });
 
-                // Add cameras to map
+                // Add new cameras to map
                 addCamerasToMapByPriority();
 
                 document.getElementById('loadingStatus').style.display = 'none';
-                console.log(`Loaded ${tilesToLoad.length} tiles. Showing ${state.cameraData.features.length} cameras`);
+                console.log(`Loaded ${tilesToLoad.length} tiles. Total cameras: ${state.cameraData.features.length}`);
             });
         }
 

@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.2870526, 29.5212778]}, "properties": {"camera:mount": "mast", "description": "Autonomous Surveillance Tower (AST)", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "camera;radar", "unsigned_ref:US:eff": "Tower250"}}], "networks": []}

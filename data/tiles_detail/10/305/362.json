@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-72.5173655, 46.3356853]}, "properties": {"highway": "street_lamp", "image": "https://web.archive.org/web/20220721232055/https://westnordost.de/p/94608.jpg", "man_made": "surveillance", "surveillance:type": "camera"}}], "networks": []}

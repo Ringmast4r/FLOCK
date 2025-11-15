@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-82.5393607, 43.4301724]}, "properties": {"camera:mount": "roof", "contact:webcam": "https://portsanilacmarina.com/marina-cam/", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "camera", "surveillance:zone": "harbour"}}], "networks": []}

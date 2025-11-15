@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [9.0124815, 60.0528291]}, "properties": {"id": 7947355288, "man_made": "surveillance", "name": "Killingdalen", "surveillance": "camera", "website": "https://vegglifjell.no/kamera-vegglifjell/", "data_source": "planet_osm"}}], "networks": []}

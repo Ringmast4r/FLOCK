@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-0.5031623, 46.3155174]}, "properties": {"id": 2494906827, "comment": "Emplacement du radar pour les feux rouges", "man_made": "surveillance", "source": "knowledge", "data_source": "planet_osm"}}], "networks": []}

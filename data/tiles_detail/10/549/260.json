@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [13.195366, 65.8637565]}, "properties": {"id": 1491968161, "man_made": "surveillance", "name": "Shell", "surveillance": "outdoor", "data_source": "planet_osm"}}], "networks": []}

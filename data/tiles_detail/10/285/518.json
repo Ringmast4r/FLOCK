@@ -1,1 +1,0 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-79.5435033, -2.3594437]}, "properties": {"id": 8074012859, "man_made": "surveillance", "name": "Garita Bypass", "surveillance": "guard", "surveillance:type": "guard", "data_source": "planet_osm"}}], "networks": []}
