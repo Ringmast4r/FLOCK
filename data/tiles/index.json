@@ -7,22 +7,22 @@
       "path": "data/tiles/6/18/22.json"
     },
     "6/13/25": {
-      "cameras": 1021,
+      "cameras": 1023,
       "networks": 11,
       "path": "data/tiles/6/13/25.json"
     },
     "6/10/24": {
-      "cameras": 5936,
+      "cameras": 5957,
       "networks": 718,
       "path": "data/tiles/6/10/24.json"
     },
     "6/15/23": {
-      "cameras": 1323,
+      "cameras": 1328,
       "networks": 182,
       "path": "data/tiles/6/15/23.json"
     },
     "6/10/23": {
-      "cameras": 407,
+      "cameras": 410,
       "networks": 38,
       "path": "data/tiles/6/10/23.json"
     },
@@ -32,77 +32,77 @@
       "path": "data/tiles/6/18/23.json"
     },
     "6/18/24": {
-      "cameras": 4630,
+      "cameras": 4829,
       "networks": 227,
       "path": "data/tiles/6/18/24.json"
     },
     "6/11/25": {
-      "cameras": 4351,
+      "cameras": 4370,
       "networks": 140,
       "path": "data/tiles/6/11/25.json"
     },
     "6/13/24": {
-      "cameras": 2929,
+      "cameras": 2931,
       "networks": 27,
       "path": "data/tiles/6/13/24.json"
     },
     "6/16/25": {
-      "cameras": 2751,
+      "cameras": 2764,
       "networks": 287,
       "path": "data/tiles/6/16/25.json"
     },
     "6/19/23": {
-      "cameras": 6093,
+      "cameras": 6097,
       "networks": 220,
       "path": "data/tiles/6/19/23.json"
     },
     "6/17/23": {
-      "cameras": 6343,
+      "cameras": 6349,
       "networks": 189,
       "path": "data/tiles/6/17/23.json"
     },
     "6/17/26": {
-      "cameras": 1781,
+      "cameras": 1805,
       "networks": 117,
       "path": "data/tiles/6/17/26.json"
     },
     "6/17/25": {
-      "cameras": 2934,
+      "cameras": 2951,
       "networks": 214,
       "path": "data/tiles/6/17/25.json"
     },
     "6/14/22": {
-      "cameras": 161,
+      "cameras": 162,
       "networks": 0,
       "path": "data/tiles/6/14/22.json"
     },
     "6/14/25": {
-      "cameras": 3196,
+      "cameras": 3206,
       "networks": 35,
       "path": "data/tiles/6/14/25.json"
     },
     "6/17/27": {
-      "cameras": 650,
+      "cameras": 667,
       "networks": 3,
       "path": "data/tiles/6/17/27.json"
     },
     "6/17/24": {
-      "cameras": 2035,
+      "cameras": 2037,
       "networks": 128,
       "path": "data/tiles/6/17/24.json"
     },
     "6/14/24": {
-      "cameras": 265,
+      "cameras": 269,
       "networks": 10,
       "path": "data/tiles/6/14/24.json"
     },
     "6/15/26": {
-      "cameras": 3135,
+      "cameras": 3140,
       "networks": 338,
       "path": "data/tiles/6/15/26.json"
     },
     "6/15/25": {
-      "cameras": 613,
+      "cameras": 617,
       "networks": 4,
       "path": "data/tiles/6/15/25.json"
     },
@@ -112,22 +112,22 @@
       "path": "data/tiles/6/14/23.json"
     },
     "6/14/26": {
-      "cameras": 1451,
+      "cameras": 1455,
       "networks": 174,
       "path": "data/tiles/6/14/26.json"
     },
     "6/16/24": {
-      "cameras": 3131,
+      "cameras": 3138,
       "networks": 510,
       "path": "data/tiles/6/16/24.json"
     },
     "6/12/24": {
-      "cameras": 865,
+      "cameras": 869,
       "networks": 1,
       "path": "data/tiles/6/12/24.json"
     },
     "6/16/23": {
-      "cameras": 6041,
+      "cameras": 6044,
       "networks": 379,
       "path": "data/tiles/6/16/23.json"
     },
@@ -147,12 +147,12 @@
       "path": "data/tiles/6/10/25.json"
     },
     "6/10/22": {
-      "cameras": 3023,
+      "cameras": 3030,
       "networks": 70,
       "path": "data/tiles/6/10/22.json"
     },
     "6/12/25": {
-      "cameras": 991,
+      "cameras": 1000,
       "networks": 1,
       "path": "data/tiles/6/12/25.json"
     },
@@ -162,7 +162,7 @@
       "path": "data/tiles/6/15/22.json"
     },
     "6/20/22": {
-      "cameras": 49,
+      "cameras": 87,
       "networks": 0,
       "path": "data/tiles/6/20/22.json"
     },
@@ -177,7 +177,7 @@
       "path": "data/tiles/6/19/22.json"
     },
     "6/12/23": {
-      "cameras": 94,
+      "cameras": 107,
       "networks": 23,
       "path": "data/tiles/6/12/23.json"
     },
@@ -187,7 +187,7 @@
       "path": "data/tiles/6/13/26.json"
     },
     "6/18/25": {
-      "cameras": 272,
+      "cameras": 279,
       "networks": 9,
       "path": "data/tiles/6/18/25.json"
     },
@@ -202,17 +202,17 @@
       "path": "data/tiles/6/11/23.json"
     },
     "6/14/27": {
-      "cameras": 122,
+      "cameras": 123,
       "networks": 0,
       "path": "data/tiles/6/14/27.json"
     },
     "6/19/24": {
-      "cameras": 16,
+      "cameras": 17,
       "networks": 0,
       "path": "data/tiles/6/19/24.json"
     },
     "6/16/26": {
-      "cameras": 369,
+      "cameras": 374,
       "networks": 17,
       "path": "data/tiles/6/16/26.json"
     },
@@ -242,7 +242,7 @@
       "path": "data/tiles/6/17/22.json"
     },
     "6/10/21": {
-      "cameras": 82,
+      "cameras": 324,
       "networks": 0,
       "path": "data/tiles/6/10/21.json"
     },
@@ -252,7 +252,7 @@
       "path": "data/tiles/6/18/27.json"
     },
     "6/14/21": {
-      "cameras": 3,
+      "cameras": 4,
       "networks": 0,
       "path": "data/tiles/6/14/21.json"
     },
@@ -282,202 +282,202 @@
       "path": "data/tiles/6/13/22.json"
     },
     "6/34/22": {
-      "cameras": 3902,
+      "cameras": 10339,
       "networks": 0,
       "path": "data/tiles/6/34/22.json"
     },
     "6/33/22": {
-      "cameras": 7413,
+      "cameras": 17259,
       "networks": 0,
       "path": "data/tiles/6/33/22.json"
     },
     "6/31/20": {
-      "cameras": 2010,
+      "cameras": 4716,
       "networks": 0,
       "path": "data/tiles/6/31/20.json"
     },
     "6/33/21": {
-      "cameras": 14056,
+      "cameras": 26178,
       "networks": 0,
       "path": "data/tiles/6/33/21.json"
     },
     "6/31/21": {
-      "cameras": 3160,
+      "cameras": 6102,
       "networks": 0,
       "path": "data/tiles/6/31/21.json"
     },
     "6/30/20": {
-      "cameras": 346,
+      "cameras": 1773,
       "networks": 0,
       "path": "data/tiles/6/30/20.json"
     },
     "6/36/23": {
-      "cameras": 192,
+      "cameras": 222,
       "networks": 0,
       "path": "data/tiles/6/36/23.json"
     },
     "6/34/21": {
-      "cameras": 5857,
+      "cameras": 13713,
       "networks": 0,
       "path": "data/tiles/6/34/21.json"
     },
     "6/34/20": {
-      "cameras": 2963,
+      "cameras": 7702,
       "networks": 0,
       "path": "data/tiles/6/34/20.json"
     },
     "6/32/22": {
-      "cameras": 7768,
+      "cameras": 27394,
       "networks": 0,
       "path": "data/tiles/6/32/22.json"
     },
     "6/35/22": {
-      "cameras": 2726,
+      "cameras": 5323,
       "networks": 0,
       "path": "data/tiles/6/35/22.json"
     },
     "6/53/29": {
-      "cameras": 2232,
+      "cameras": 3076,
       "networks": 0,
       "path": "data/tiles/6/53/29.json"
     },
     "6/32/21": {
-      "cameras": 9091,
+      "cameras": 22380,
       "networks": 0,
       "path": "data/tiles/6/32/21.json"
     },
     "6/37/36": {
-      "cameras": 6,
+      "cameras": 25,
       "networks": 0,
       "path": "data/tiles/6/37/36.json"
     },
     "6/37/18": {
-      "cameras": 1569,
+      "cameras": 1652,
       "networks": 0,
       "path": "data/tiles/6/37/18.json"
     },
     "6/31/22": {
-      "cameras": 1621,
+      "cameras": 5802,
       "networks": 0,
       "path": "data/tiles/6/31/22.json"
     },
     "6/37/21": {
-      "cameras": 250,
+      "cameras": 1111,
       "networks": 0,
       "path": "data/tiles/6/37/21.json"
     },
     "6/33/20": {
-      "cameras": 2057,
+      "cameras": 4651,
       "networks": 0,
       "path": "data/tiles/6/33/20.json"
     },
     "6/32/23": {
-      "cameras": 3407,
+      "cameras": 11053,
       "networks": 0,
       "path": "data/tiles/6/32/23.json"
     },
     "6/37/24": {
-      "cameras": 16,
+      "cameras": 56,
       "networks": 0,
       "path": "data/tiles/6/37/24.json"
     },
     "6/37/22": {
-      "cameras": 175,
+      "cameras": 1380,
       "networks": 0,
       "path": "data/tiles/6/37/22.json"
     },
     "6/31/23": {
-      "cameras": 1075,
+      "cameras": 3232,
       "networks": 0,
       "path": "data/tiles/6/31/23.json"
     },
     "6/41/24": {
-      "cameras": 19,
+      "cameras": 21,
       "networks": 0,
       "path": "data/tiles/6/41/24.json"
     },
     "6/41/25": {
-      "cameras": 135,
+      "cameras": 188,
       "networks": 0,
       "path": "data/tiles/6/41/25.json"
     },
     "6/35/21": {
-      "cameras": 1963,
+      "cameras": 6472,
       "networks": 0,
       "path": "data/tiles/6/35/21.json"
     },
     "6/11/21": {
-      "cameras": 10,
+      "cameras": 661,
       "networks": 0,
       "path": "data/tiles/6/11/21.json"
     },
     "6/33/23": {
-      "cameras": 1902,
+      "cameras": 4279,
       "networks": 0,
       "path": "data/tiles/6/33/23.json"
     },
     "6/31/24": {
-      "cameras": 3291,
+      "cameras": 4229,
       "networks": 0,
       "path": "data/tiles/6/31/24.json"
     },
     "6/63/40": {
-      "cameras": 11,
+      "cameras": 69,
       "networks": 0,
       "path": "data/tiles/6/63/40.json"
     },
     "6/31/19": {
-      "cameras": 323,
+      "cameras": 816,
       "networks": 0,
       "path": "data/tiles/6/31/19.json"
     },
     "6/38/21": {
-      "cameras": 71,
+      "cameras": 129,
       "networks": 0,
       "path": "data/tiles/6/38/21.json"
     },
     "6/39/21": {
-      "cameras": 37,
+      "cameras": 81,
       "networks": 0,
       "path": "data/tiles/6/39/21.json"
     },
     "6/35/23": {
-      "cameras": 285,
+      "cameras": 528,
       "networks": 0,
       "path": "data/tiles/6/35/23.json"
     },
     "6/36/18": {
-      "cameras": 1607,
+      "cameras": 10567,
       "networks": 0,
       "path": "data/tiles/6/36/18.json"
     },
     "6/38/20": {
-      "cameras": 481,
+      "cameras": 656,
       "networks": 0,
       "path": "data/tiles/6/38/20.json"
     },
     "6/52/38": {
-      "cameras": 215,
+      "cameras": 345,
       "networks": 0,
       "path": "data/tiles/6/52/38.json"
     },
     "6/56/38": {
-      "cameras": 45,
+      "cameras": 92,
       "networks": 0,
       "path": "data/tiles/6/56/38.json"
     },
     "6/40/19": {
-      "cameras": 56,
+      "cameras": 167,
       "networks": 0,
       "path": "data/tiles/6/40/19.json"
     },
     "6/34/23": {
-      "cameras": 1248,
+      "cameras": 2754,
       "networks": 0,
       "path": "data/tiles/6/34/23.json"
     },
     "6/45/18": {
-      "cameras": 17,
+      "cameras": 25,
       "networks": 0,
       "path": "data/tiles/6/45/18.json"
     },
@@ -487,37 +487,37 @@
       "path": "data/tiles/6/38/19.json"
     },
     "6/21/38": {
-      "cameras": 795,
+      "cameras": 1677,
       "networks": 0,
       "path": "data/tiles/6/21/38.json"
     },
     "6/41/26": {
-      "cameras": 50,
+      "cameras": 100,
       "networks": 0,
       "path": "data/tiles/6/41/26.json"
     },
     "6/58/39": {
-      "cameras": 2,
+      "cameras": 7,
       "networks": 0,
       "path": "data/tiles/6/58/39.json"
     },
     "6/44/24": {
-      "cameras": 59,
+      "cameras": 74,
       "networks": 0,
       "path": "data/tiles/6/44/24.json"
     },
     "6/41/19": {
-      "cameras": 10,
+      "cameras": 40,
       "networks": 0,
       "path": "data/tiles/6/41/19.json"
     },
     "6/59/37": {
-      "cameras": 263,
+      "cameras": 505,
       "networks": 0,
       "path": "data/tiles/6/59/37.json"
     },
     "6/36/22": {
-      "cameras": 100,
+      "cameras": 340,
       "networks": 0,
       "path": "data/tiles/6/36/22.json"
     },
@@ -527,52 +527,52 @@
       "path": "data/tiles/6/37/23.json"
     },
     "6/33/18": {
-      "cameras": 353,
+      "cameras": 486,
       "networks": 0,
       "path": "data/tiles/6/33/18.json"
     },
     "6/52/24": {
-      "cameras": 106,
+      "cameras": 783,
       "networks": 0,
       "path": "data/tiles/6/52/24.json"
     },
     "6/36/20": {
-      "cameras": 1919,
+      "cameras": 8011,
       "networks": 0,
       "path": "data/tiles/6/36/20.json"
     },
     "6/19/29": {
-      "cameras": 7,
+      "cameras": 10,
       "networks": 0,
       "path": "data/tiles/6/19/29.json"
     },
     "6/35/18": {
-      "cameras": 40,
+      "cameras": 233,
       "networks": 0,
       "path": "data/tiles/6/35/18.json"
     },
     "6/36/19": {
-      "cameras": 550,
+      "cameras": 4666,
       "networks": 0,
       "path": "data/tiles/6/36/19.json"
     },
     "6/36/17": {
-      "cameras": 29,
+      "cameras": 128,
       "networks": 0,
       "path": "data/tiles/6/36/17.json"
     },
     "6/37/19": {
-      "cameras": 103,
+      "cameras": 155,
       "networks": 0,
       "path": "data/tiles/6/37/19.json"
     },
     "6/56/25": {
-      "cameras": 853,
+      "cameras": 1451,
       "networks": 0,
       "path": "data/tiles/6/56/25.json"
     },
     "6/32/24": {
-      "cameras": 101,
+      "cameras": 353,
       "networks": 0,
       "path": "data/tiles/6/32/24.json"
     },
@@ -582,117 +582,117 @@
       "path": "data/tiles/6/44/19.json"
     },
     "6/38/23": {
-      "cameras": 90,
+      "cameras": 125,
       "networks": 0,
       "path": "data/tiles/6/38/23.json"
     },
     "6/56/24": {
-      "cameras": 103,
+      "cameras": 163,
       "networks": 0,
       "path": "data/tiles/6/56/24.json"
     },
     "6/18/32": {
-      "cameras": 24,
+      "cameras": 208,
       "networks": 0,
       "path": "data/tiles/6/18/32.json"
     },
     "6/20/39": {
-      "cameras": 12,
+      "cameras": 77,
       "networks": 0,
       "path": "data/tiles/6/20/39.json"
     },
     "6/16/29": {
-      "cameras": 31,
+      "cameras": 122,
       "networks": 0,
       "path": "data/tiles/6/16/29.json"
     },
     "6/57/39": {
-      "cameras": 40,
+      "cameras": 275,
       "networks": 0,
       "path": "data/tiles/6/57/39.json"
     },
     "6/42/20": {
-      "cameras": 419,
+      "cameras": 637,
       "networks": 0,
       "path": "data/tiles/6/42/20.json"
     },
     "6/50/28": {
-      "cameras": 50,
+      "cameras": 90,
       "networks": 0,
       "path": "data/tiles/6/50/28.json"
     },
     "6/35/17": {
-      "cameras": 28,
+      "cameras": 43,
       "networks": 0,
       "path": "data/tiles/6/35/17.json"
     },
     "6/34/24": {
-      "cameras": 421,
+      "cameras": 1105,
       "networks": 0,
       "path": "data/tiles/6/34/24.json"
     },
     "6/14/28": {
-      "cameras": 199,
+      "cameras": 396,
       "networks": 0,
       "path": "data/tiles/6/14/28.json"
     },
     "6/37/20": {
-      "cameras": 119,
+      "cameras": 565,
       "networks": 0,
       "path": "data/tiles/6/37/20.json"
     },
     "6/32/20": {
-      "cameras": 324,
+      "cameras": 647,
       "networks": 0,
       "path": "data/tiles/6/32/20.json"
     },
     "6/35/20": {
-      "cameras": 678,
+      "cameras": 1512,
       "networks": 0,
       "path": "data/tiles/6/35/20.json"
     },
     "6/45/29": {
-      "cameras": 684,
+      "cameras": 2279,
       "networks": 0,
       "path": "data/tiles/6/45/29.json"
     },
     "6/44/23": {
-      "cameras": 87,
+      "cameras": 105,
       "networks": 0,
       "path": "data/tiles/6/44/23.json"
     },
     "6/36/24": {
-      "cameras": 112,
+      "cameras": 114,
       "networks": 0,
       "path": "data/tiles/6/36/24.json"
     },
     "6/36/21": {
-      "cameras": 334,
+      "cameras": 684,
       "networks": 0,
       "path": "data/tiles/6/36/21.json"
     },
     "6/22/37": {
-      "cameras": 371,
+      "cameras": 450,
       "networks": 0,
       "path": "data/tiles/6/22/37.json"
     },
     "6/59/36": {
-      "cameras": 6,
+      "cameras": 16,
       "networks": 0,
       "path": "data/tiles/6/59/36.json"
     },
     "6/29/26": {
-      "cameras": 11,
+      "cameras": 26,
       "networks": 0,
       "path": "data/tiles/6/29/26.json"
     },
     "6/46/20": {
-      "cameras": 8,
+      "cameras": 21,
       "networks": 0,
       "path": "data/tiles/6/46/20.json"
     },
     "6/30/23": {
-      "cameras": 248,
+      "cameras": 538,
       "networks": 0,
       "path": "data/tiles/6/30/23.json"
     },
@@ -702,7 +702,7 @@
       "path": "data/tiles/6/36/16.json"
     },
     "6/42/19": {
-      "cameras": 159,
+      "cameras": 582,
       "networks": 0,
       "path": "data/tiles/6/42/19.json"
     },
@@ -722,152 +722,152 @@
       "path": "data/tiles/6/41/35.json"
     },
     "6/38/25": {
-      "cameras": 27,
+      "cameras": 140,
       "networks": 0,
       "path": "data/tiles/6/38/25.json"
     },
     "6/38/22": {
-      "cameras": 221,
+      "cameras": 298,
       "networks": 0,
       "path": "data/tiles/6/38/22.json"
     },
     "6/34/17": {
-      "cameras": 46,
+      "cameras": 108,
       "networks": 0,
       "path": "data/tiles/6/34/17.json"
     },
     "6/46/21": {
-      "cameras": 34,
+      "cameras": 72,
       "networks": 0,
       "path": "data/tiles/6/46/21.json"
     },
     "6/20/36": {
-      "cameras": 10,
+      "cameras": 442,
       "networks": 0,
       "path": "data/tiles/6/20/36.json"
     },
     "6/39/19": {
-      "cameras": 233,
+      "cameras": 373,
       "networks": 0,
       "path": "data/tiles/6/39/19.json"
     },
     "6/57/38": {
-      "cameras": 1,
+      "cameras": 2,
       "networks": 0,
       "path": "data/tiles/6/57/38.json"
     },
     "6/20/38": {
-      "cameras": 12,
+      "cameras": 88,
       "networks": 0,
       "path": "data/tiles/6/20/38.json"
     },
     "6/38/27": {
-      "cameras": 57,
+      "cameras": 59,
       "networks": 0,
       "path": "data/tiles/6/38/27.json"
     },
     "6/40/18": {
-      "cameras": 8,
+      "cameras": 9,
       "networks": 0,
       "path": "data/tiles/6/40/18.json"
     },
     "6/23/36": {
-      "cameras": 342,
+      "cameras": 682,
       "networks": 0,
       "path": "data/tiles/6/23/36.json"
     },
     "6/19/38": {
-      "cameras": 794,
+      "cameras": 1125,
       "networks": 0,
       "path": "data/tiles/6/19/38.json"
     },
     "6/51/28": {
-      "cameras": 6,
+      "cameras": 34,
       "networks": 0,
       "path": "data/tiles/6/51/28.json"
     },
     "6/52/27": {
-      "cameras": 141,
+      "cameras": 1008,
       "networks": 0,
       "path": "data/tiles/6/52/27.json"
     },
     "6/41/20": {
-      "cameras": 52,
+      "cameras": 133,
       "networks": 0,
       "path": "data/tiles/6/41/20.json"
     },
     "6/45/20": {
-      "cameras": 124,
+      "cameras": 139,
       "networks": 0,
       "path": "data/tiles/6/45/20.json"
     },
     "6/39/16": {
-      "cameras": 94,
+      "cameras": 95,
       "networks": 0,
       "path": "data/tiles/6/39/16.json"
     },
     "6/32/18": {
-      "cameras": 93,
+      "cameras": 191,
       "networks": 0,
       "path": "data/tiles/6/32/18.json"
     },
     "6/50/19": {
-      "cameras": 8,
+      "cameras": 11,
       "networks": 0,
       "path": "data/tiles/6/50/19.json"
     },
     "6/47/19": {
-      "cameras": 87,
+      "cameras": 92,
       "networks": 0,
       "path": "data/tiles/6/47/19.json"
     },
     "6/39/22": {
-      "cameras": 27,
+      "cameras": 108,
       "networks": 0,
       "path": "data/tiles/6/39/22.json"
     },
     "6/45/23": {
-      "cameras": 32,
+      "cameras": 106,
       "networks": 0,
       "path": "data/tiles/6/45/23.json"
     },
     "6/30/21": {
-      "cameras": 41,
+      "cameras": 204,
       "networks": 0,
       "path": "data/tiles/6/30/21.json"
     },
     "6/35/14": {
-      "cameras": 28,
+      "cameras": 35,
       "networks": 0,
       "path": "data/tiles/6/35/14.json"
     },
     "6/30/25": {
-      "cameras": 20,
+      "cameras": 62,
       "networks": 0,
       "path": "data/tiles/6/30/25.json"
     },
     "6/33/24": {
-      "cameras": 39,
+      "cameras": 231,
       "networks": 0,
       "path": "data/tiles/6/33/24.json"
     },
     "6/35/24": {
-      "cameras": 419,
+      "cameras": 477,
       "networks": 0,
       "path": "data/tiles/6/35/24.json"
     },
     "6/58/38": {
-      "cameras": 388,
+      "cameras": 902,
       "networks": 0,
       "path": "data/tiles/6/58/38.json"
     },
     "6/20/25": {
-      "cameras": 35,
+      "cameras": 144,
       "networks": 0,
       "path": "data/tiles/6/20/25.json"
     },
     "6/24/36": {
-      "cameras": 70,
+      "cameras": 103,
       "networks": 0,
       "path": "data/tiles/6/24/36.json"
     },
@@ -877,32 +877,32 @@
       "path": "data/tiles/6/46/17.json"
     },
     "6/35/19": {
-      "cameras": 47,
+      "cameras": 119,
       "networks": 0,
       "path": "data/tiles/6/35/19.json"
     },
     "6/22/38": {
-      "cameras": 28,
+      "cameras": 30,
       "networks": 0,
       "path": "data/tiles/6/22/38.json"
     },
     "6/55/23": {
-      "cameras": 26,
+      "cameras": 31,
       "networks": 0,
       "path": "data/tiles/6/55/23.json"
     },
     "6/52/37": {
-      "cameras": 67,
+      "cameras": 148,
       "networks": 0,
       "path": "data/tiles/6/52/37.json"
     },
     "6/18/31": {
-      "cameras": 685,
+      "cameras": 833,
       "networks": 0,
       "path": "data/tiles/6/18/31.json"
     },
     "6/40/20": {
-      "cameras": 94,
+      "cameras": 196,
       "networks": 0,
       "path": "data/tiles/6/40/20.json"
     },
@@ -912,12 +912,12 @@
       "path": "data/tiles/6/42/35.json"
     },
     "6/30/24": {
-      "cameras": 204,
+      "cameras": 663,
       "networks": 0,
       "path": "data/tiles/6/30/24.json"
     },
     "6/31/25": {
-      "cameras": 11,
+      "cameras": 90,
       "networks": 0,
       "path": "data/tiles/6/31/25.json"
     },
@@ -927,22 +927,22 @@
       "path": "data/tiles/6/38/24.json"
     },
     "6/18/28": {
-      "cameras": 16,
+      "cameras": 30,
       "networks": 0,
       "path": "data/tiles/6/18/28.json"
     },
     "6/50/30": {
-      "cameras": 32,
+      "cameras": 45,
       "networks": 0,
       "path": "data/tiles/6/50/30.json"
     },
     "6/55/25": {
-      "cameras": 27,
+      "cameras": 231,
       "networks": 0,
       "path": "data/tiles/6/55/25.json"
     },
     "6/48/19": {
-      "cameras": 40,
+      "cameras": 68,
       "networks": 0,
       "path": "data/tiles/6/48/19.json"
     },
@@ -952,32 +952,32 @@
       "path": "data/tiles/6/61/36.json"
     },
     "6/51/27": {
-      "cameras": 120,
+      "cameras": 143,
       "networks": 0,
       "path": "data/tiles/6/51/27.json"
     },
     "6/39/18": {
-      "cameras": 12,
+      "cameras": 13,
       "networks": 0,
       "path": "data/tiles/6/39/18.json"
     },
     "6/42/21": {
-      "cameras": 67,
+      "cameras": 72,
       "networks": 0,
       "path": "data/tiles/6/42/21.json"
     },
     "6/33/19": {
-      "cameras": 64,
+      "cameras": 993,
       "networks": 0,
       "path": "data/tiles/6/33/19.json"
     },
     "6/54/30": {
-      "cameras": 15,
+      "cameras": 29,
       "networks": 0,
       "path": "data/tiles/6/54/30.json"
     },
     "6/19/28": {
-      "cameras": 9,
+      "cameras": 10,
       "networks": 0,
       "path": "data/tiles/6/19/28.json"
     },
@@ -987,7 +987,7 @@
       "path": "data/tiles/6/50/31.json"
     },
     "6/35/15": {
-      "cameras": 14,
+      "cameras": 21,
       "networks": 0,
       "path": "data/tiles/6/35/15.json"
     },
@@ -997,17 +997,17 @@
       "path": "data/tiles/6/45/17.json"
     },
     "6/34/19": {
-      "cameras": 24,
+      "cameras": 283,
       "networks": 0,
       "path": "data/tiles/6/34/19.json"
     },
     "6/47/21": {
-      "cameras": 3,
+      "cameras": 5,
       "networks": 0,
       "path": "data/tiles/6/47/21.json"
     },
     "6/53/30": {
-      "cameras": 35,
+      "cameras": 44,
       "networks": 0,
       "path": "data/tiles/6/53/30.json"
     },
@@ -1022,37 +1022,37 @@
       "path": "data/tiles/6/32/26.json"
     },
     "6/40/23": {
-      "cameras": 24,
+      "cameras": 25,
       "networks": 0,
       "path": "data/tiles/6/40/23.json"
     },
     "6/17/32": {
-      "cameras": 67,
+      "cameras": 111,
       "networks": 0,
       "path": "data/tiles/6/17/32.json"
     },
     "6/46/30": {
-      "cameras": 1,
+      "cameras": 6,
       "networks": 0,
       "path": "data/tiles/6/46/30.json"
     },
     "6/20/37": {
-      "cameras": 10,
+      "cameras": 42,
       "networks": 0,
       "path": "data/tiles/6/20/37.json"
     },
     "6/19/39": {
-      "cameras": 40,
+      "cameras": 351,
       "networks": 0,
       "path": "data/tiles/6/19/39.json"
     },
     "6/18/30": {
-      "cameras": 79,
+      "cameras": 108,
       "networks": 0,
       "path": "data/tiles/6/18/30.json"
     },
     "6/54/29": {
-      "cameras": 78,
+      "cameras": 151,
       "networks": 0,
       "path": "data/tiles/6/54/29.json"
     },
@@ -1062,37 +1062,37 @@
       "path": "data/tiles/6/31/18.json"
     },
     "6/37/16": {
-      "cameras": 6,
+      "cameras": 8,
       "networks": 0,
       "path": "data/tiles/6/37/16.json"
     },
     "6/53/26": {
-      "cameras": 60,
+      "cameras": 153,
       "networks": 0,
       "path": "data/tiles/6/53/26.json"
     },
     "6/21/29": {
-      "cameras": 7,
+      "cameras": 79,
       "networks": 0,
       "path": "data/tiles/6/21/29.json"
     },
     "6/39/23": {
-      "cameras": 68,
+      "cameras": 125,
       "networks": 0,
       "path": "data/tiles/6/39/23.json"
     },
     "6/45/26": {
-      "cameras": 7,
+      "cameras": 431,
       "networks": 0,
       "path": "data/tiles/6/45/26.json"
     },
     "6/37/25": {
-      "cameras": 7,
+      "cameras": 40,
       "networks": 0,
       "path": "data/tiles/6/37/25.json"
     },
     "6/42/26": {
-      "cameras": 7,
+      "cameras": 9,
       "networks": 0,
       "path": "data/tiles/6/42/26.json"
     },
@@ -1102,22 +1102,22 @@
       "path": "data/tiles/6/32/17.json"
     },
     "6/36/15": {
-      "cameras": 6,
+      "cameras": 7,
       "networks": 0,
       "path": "data/tiles/6/36/15.json"
     },
     "6/33/17": {
-      "cameras": 450,
+      "cameras": 642,
       "networks": 0,
       "path": "data/tiles/6/33/17.json"
     },
     "6/34/18": {
-      "cameras": 19,
+      "cameras": 62,
       "networks": 0,
       "path": "data/tiles/6/34/18.json"
     },
     "6/34/15": {
-      "cameras": 28,
+      "cameras": 34,
       "networks": 0,
       "path": "data/tiles/6/34/15.json"
     },
@@ -1127,12 +1127,12 @@
       "path": "data/tiles/6/37/14.json"
     },
     "6/34/16": {
-      "cameras": 7,
+      "cameras": 12,
       "networks": 0,
       "path": "data/tiles/6/34/16.json"
     },
     "6/36/13": {
-      "cameras": 1,
+      "cameras": 6,
       "networks": 0,
       "path": "data/tiles/6/36/13.json"
     },
@@ -1142,12 +1142,12 @@
       "path": "data/tiles/6/36/14.json"
     },
     "6/63/39": {
-      "cameras": 52,
+      "cameras": 387,
       "networks": 0,
       "path": "data/tiles/6/63/39.json"
     },
     "6/23/37": {
-      "cameras": 97,
+      "cameras": 374,
       "networks": 0,
       "path": "data/tiles/6/23/37.json"
     },
@@ -1157,7 +1157,7 @@
       "path": "data/tiles/6/28/17.json"
     },
     "6/48/27": {
-      "cameras": 29,
+      "cameras": 42,
       "networks": 0,
       "path": "data/tiles/6/48/27.json"
     },
@@ -1167,22 +1167,22 @@
       "path": "data/tiles/6/54/20.json"
     },
     "6/41/27": {
-      "cameras": 56,
+      "cameras": 85,
       "networks": 0,
       "path": "data/tiles/6/41/27.json"
     },
     "6/46/29": {
-      "cameras": 5,
+      "cameras": 134,
       "networks": 0,
       "path": "data/tiles/6/46/29.json"
     },
     "6/21/37": {
-      "cameras": 9,
+      "cameras": 56,
       "networks": 0,
       "path": "data/tiles/6/21/37.json"
     },
     "6/20/35": {
-      "cameras": 89,
+      "cameras": 149,
       "networks": 0,
       "path": "data/tiles/6/20/35.json"
     },
@@ -1192,17 +1192,17 @@
       "path": "data/tiles/6/51/33.json"
     },
     "6/45/30": {
-      "cameras": 30,
+      "cameras": 231,
       "networks": 0,
       "path": "data/tiles/6/45/30.json"
     },
     "6/24/35": {
-      "cameras": 43,
+      "cameras": 106,
       "networks": 0,
       "path": "data/tiles/6/24/35.json"
     },
     "6/54/25": {
-      "cameras": 28,
+      "cameras": 128,
       "networks": 0,
       "path": "data/tiles/6/54/25.json"
     },
@@ -1212,87 +1212,87 @@
       "path": "data/tiles/6/29/17.json"
     },
     "6/50/29": {
-      "cameras": 15,
+      "cameras": 20,
       "networks": 0,
       "path": "data/tiles/6/50/29.json"
     },
     "6/39/20": {
-      "cameras": 23,
+      "cameras": 38,
       "networks": 0,
       "path": "data/tiles/6/39/20.json"
     },
     "6/57/40": {
-      "cameras": 1,
+      "cameras": 3,
       "networks": 0,
       "path": "data/tiles/6/57/40.json"
     },
     "6/42/25": {
-      "cameras": 10,
+      "cameras": 15,
       "networks": 0,
       "path": "data/tiles/6/42/25.json"
     },
     "6/44/18": {
-      "cameras": 6,
+      "cameras": 7,
       "networks": 0,
       "path": "data/tiles/6/44/18.json"
     },
     "6/53/27": {
-      "cameras": 188,
+      "cameras": 243,
       "networks": 0,
       "path": "data/tiles/6/53/27.json"
     },
     "6/42/23": {
-      "cameras": 79,
+      "cameras": 147,
       "networks": 0,
       "path": "data/tiles/6/42/23.json"
     },
     "6/23/32": {
-      "cameras": 2,
+      "cameras": 5,
       "networks": 0,
       "path": "data/tiles/6/23/32.json"
     },
     "6/53/25": {
-      "cameras": 11,
+      "cameras": 37,
       "networks": 0,
       "path": "data/tiles/6/53/25.json"
     },
     "6/37/17": {
-      "cameras": 15,
+      "cameras": 16,
       "networks": 0,
       "path": "data/tiles/6/37/17.json"
     },
     "6/51/22": {
-      "cameras": 9,
+      "cameras": 16,
       "networks": 0,
       "path": "data/tiles/6/51/22.json"
     },
     "6/40/21": {
-      "cameras": 13,
+      "cameras": 20,
       "networks": 0,
       "path": "data/tiles/6/40/21.json"
     },
     "6/41/17": {
-      "cameras": 2,
+      "cameras": 26,
       "networks": 0,
       "path": "data/tiles/6/41/17.json"
     },
     "6/22/36": {
-      "cameras": 57,
+      "cameras": 79,
       "networks": 0,
       "path": "data/tiles/6/22/36.json"
     },
     "6/62/41": {
-      "cameras": 2,
+      "cameras": 46,
       "networks": 0,
       "path": "data/tiles/6/62/41.json"
     },
     "6/22/31": {
-      "cameras": 5,
+      "cameras": 33,
       "networks": 0,
       "path": "data/tiles/6/22/31.json"
     },
     "6/20/30": {
-      "cameras": 3,
+      "cameras": 5,
       "networks": 0,
       "path": "data/tiles/6/20/30.json"
     },
@@ -1302,12 +1302,12 @@
       "path": "data/tiles/6/50/20.json"
     },
     "6/38/26": {
-      "cameras": 8,
+      "cameras": 58,
       "networks": 0,
       "path": "data/tiles/6/38/26.json"
     },
     "6/13/28": {
-      "cameras": 24,
+      "cameras": 44,
       "networks": 0,
       "path": "data/tiles/6/13/28.json"
     },
@@ -1317,32 +1317,32 @@
       "path": "data/tiles/6/41/18.json"
     },
     "6/46/27": {
-      "cameras": 1,
+      "cameras": 26,
       "networks": 0,
       "path": "data/tiles/6/46/27.json"
     },
     "6/41/28": {
-      "cameras": 5,
+      "cameras": 17,
       "networks": 0,
       "path": "data/tiles/6/41/28.json"
     },
     "6/47/27": {
-      "cameras": 32,
+      "cameras": 127,
       "networks": 0,
       "path": "data/tiles/6/47/27.json"
     },
     "6/19/31": {
-      "cameras": 1,
+      "cameras": 5,
       "networks": 0,
       "path": "data/tiles/6/19/31.json"
     },
     "6/43/19": {
-      "cameras": 2,
+      "cameras": 22,
       "networks": 0,
       "path": "data/tiles/6/43/19.json"
     },
     "6/23/35": {
-      "cameras": 15,
+      "cameras": 31,
       "networks": 0,
       "path": "data/tiles/6/23/35.json"
     },
@@ -1357,37 +1357,37 @@
       "path": "data/tiles/6/27/24.json"
     },
     "6/49/29": {
-      "cameras": 48,
+      "cameras": 87,
       "networks": 0,
       "path": "data/tiles/6/49/29.json"
     },
     "6/36/36": {
-      "cameras": 12,
+      "cameras": 147,
       "networks": 0,
       "path": "data/tiles/6/36/36.json"
     },
     "6/32/29": {
-      "cameras": 8,
+      "cameras": 10,
       "networks": 0,
       "path": "data/tiles/6/32/29.json"
     },
     "6/40/34": {
-      "cameras": 3,
+      "cameras": 126,
       "networks": 0,
       "path": "data/tiles/6/40/34.json"
     },
     "6/28/26": {
-      "cameras": 7,
+      "cameras": 13,
       "networks": 0,
       "path": "data/tiles/6/28/26.json"
     },
     "6/34/29": {
-      "cameras": 6,
+      "cameras": 7,
       "networks": 0,
       "path": "data/tiles/6/34/29.json"
     },
     "6/51/29": {
-      "cameras": 28,
+      "cameras": 30,
       "networks": 0,
       "path": "data/tiles/6/51/29.json"
     },
@@ -1402,7 +1402,7 @@
       "path": "data/tiles/6/54/19.json"
     },
     "6/37/26": {
-      "cameras": 12,
+      "cameras": 18,
       "networks": 0,
       "path": "data/tiles/6/37/26.json"
     },
@@ -1412,22 +1412,22 @@
       "path": "data/tiles/6/50/21.json"
     },
     "6/45/28": {
-      "cameras": 38,
+      "cameras": 173,
       "networks": 0,
       "path": "data/tiles/6/45/28.json"
     },
     "6/23/34": {
-      "cameras": 11,
+      "cameras": 48,
       "networks": 0,
       "path": "data/tiles/6/23/34.json"
     },
     "6/17/30": {
-      "cameras": 26,
+      "cameras": 146,
       "networks": 0,
       "path": "data/tiles/6/17/30.json"
     },
     "6/34/31": {
-      "cameras": 3,
+      "cameras": 22,
       "networks": 0,
       "path": "data/tiles/6/34/31.json"
     },
@@ -1437,12 +1437,12 @@
       "path": "data/tiles/6/55/17.json"
     },
     "6/54/24": {
-      "cameras": 108,
+      "cameras": 275,
       "networks": 0,
       "path": "data/tiles/6/54/24.json"
     },
     "6/34/25": {
-      "cameras": 28,
+      "cameras": 33,
       "networks": 0,
       "path": "data/tiles/6/34/25.json"
     },
@@ -1452,12 +1452,12 @@
       "path": "data/tiles/6/28/16.json"
     },
     "6/55/26": {
-      "cameras": 5,
+      "cameras": 7,
       "networks": 0,
       "path": "data/tiles/6/55/26.json"
     },
     "6/44/20": {
-      "cameras": 27,
+      "cameras": 277,
       "networks": 0,
       "path": "data/tiles/6/44/20.json"
     },
@@ -1477,22 +1477,22 @@
       "path": "data/tiles/6/49/31.json"
     },
     "6/40/24": {
-      "cameras": 57,
+      "cameras": 96,
       "networks": 0,
       "path": "data/tiles/6/40/24.json"
     },
     "6/40/25": {
-      "cameras": 78,
+      "cameras": 137,
       "networks": 0,
       "path": "data/tiles/6/40/25.json"
     },
     "6/44/28": {
-      "cameras": 3,
+      "cameras": 42,
       "networks": 0,
       "path": "data/tiles/6/44/28.json"
     },
     "6/30/26": {
-      "cameras": 4,
+      "cameras": 5,
       "networks": 0,
       "path": "data/tiles/6/30/26.json"
     },
@@ -1502,37 +1502,37 @@
       "path": "data/tiles/6/44/27.json"
     },
     "6/41/21": {
-      "cameras": 13,
+      "cameras": 14,
       "networks": 0,
       "path": "data/tiles/6/41/21.json"
     },
     "6/35/16": {
-      "cameras": 1,
+      "cameras": 2,
       "networks": 0,
       "path": "data/tiles/6/35/16.json"
     },
     "6/58/40": {
-      "cameras": 17,
+      "cameras": 60,
       "networks": 0,
       "path": "data/tiles/6/58/40.json"
     },
     "6/63/38": {
-      "cameras": 1,
+      "cameras": 15,
       "networks": 0,
       "path": "data/tiles/6/63/38.json"
     },
     "6/29/25": {
-      "cameras": 2,
+      "cameras": 14,
       "networks": 0,
       "path": "data/tiles/6/29/25.json"
     },
     "6/25/33": {
-      "cameras": 33,
+      "cameras": 125,
       "networks": 0,
       "path": "data/tiles/6/25/33.json"
     },
     "6/34/33": {
-      "cameras": 135,
+      "cameras": 155,
       "networks": 0,
       "path": "data/tiles/6/34/33.json"
     },
@@ -1547,7 +1547,7 @@
       "path": "data/tiles/6/22/14.json"
     },
     "6/37/33": {
-      "cameras": 2,
+      "cameras": 3,
       "networks": 0,
       "path": "data/tiles/6/37/33.json"
     },
@@ -1562,7 +1562,7 @@
       "path": "data/tiles/6/31/29.json"
     },
     "6/35/36": {
-      "cameras": 1,
+      "cameras": 2,
       "networks": 0,
       "path": "data/tiles/6/35/36.json"
     },
@@ -1572,97 +1572,97 @@
       "path": "data/tiles/6/34/8.json"
     },
     "6/18/34": {
-      "cameras": 364,
+      "cameras": 406,
       "networks": 0,
       "path": "data/tiles/6/18/34.json"
     },
     "6/16/28": {
-      "cameras": 15,
+      "cameras": 18,
       "networks": 0,
       "path": "data/tiles/6/16/28.json"
     },
     "6/20/33": {
-      "cameras": 1,
+      "cameras": 4,
       "networks": 0,
       "path": "data/tiles/6/20/33.json"
     },
     "6/43/26": {
-      "cameras": 1,
+      "cameras": 7,
       "networks": 0,
       "path": "data/tiles/6/43/26.json"
     },
     "6/30/19": {
-      "cameras": 1,
+      "cameras": 2,
       "networks": 0,
       "path": "data/tiles/6/30/19.json"
     },
     "6/20/28": {
-      "cameras": 1,
+      "cameras": 13,
       "networks": 0,
       "path": "data/tiles/6/20/28.json"
     },
     "6/24/34": {
-      "cameras": 15,
+      "cameras": 27,
       "networks": 0,
       "path": "data/tiles/6/24/34.json"
     },
     "6/62/40": {
-      "cameras": 10,
+      "cameras": 251,
       "networks": 0,
       "path": "data/tiles/6/62/40.json"
     },
     "6/54/27": {
-      "cameras": 7,
+      "cameras": 9,
       "networks": 0,
       "path": "data/tiles/6/54/27.json"
     },
     "6/49/28": {
-      "cameras": 62,
+      "cameras": 66,
       "networks": 0,
       "path": "data/tiles/6/49/28.json"
     },
     "6/19/34": {
-      "cameras": 24,
+      "cameras": 98,
       "networks": 0,
       "path": "data/tiles/6/19/34.json"
     },
     "6/35/38": {
-      "cameras": 13,
+      "cameras": 28,
       "networks": 0,
       "path": "data/tiles/6/35/38.json"
     },
     "6/44/22": {
-      "cameras": 1,
+      "cameras": 4,
       "networks": 0,
       "path": "data/tiles/6/44/22.json"
     },
     "6/43/24": {
-      "cameras": 22,
+      "cameras": 28,
       "networks": 0,
       "path": "data/tiles/6/43/24.json"
     },
     "6/31/30": {
-      "cameras": 5,
+      "cameras": 32,
       "networks": 0,
       "path": "data/tiles/6/31/30.json"
     },
     "6/18/39": {
-      "cameras": 26,
+      "cameras": 58,
       "networks": 0,
       "path": "data/tiles/6/18/39.json"
     },
     "6/19/35": {
-      "cameras": 4,
+      "cameras": 8,
       "networks": 0,
       "path": "data/tiles/6/19/35.json"
     },
     "6/55/22": {
-      "cameras": 10,
+      "cameras": 12,
       "networks": 0,
       "path": "data/tiles/6/55/22.json"
     },
     "6/21/39": {
-      "cameras": 73,
+      "cameras": 788,
       "networks": 0,
       "path": "data/tiles/6/21/39.json"
     },
@@ -1672,12 +1672,12 @@
       "path": "data/tiles/6/30/29.json"
     },
     "6/47/26": {
-      "cameras": 13,
+      "cameras": 18,
       "networks": 0,
       "path": "data/tiles/6/47/26.json"
     },
     "6/36/25": {
-      "cameras": 12,
+      "cameras": 158,
       "networks": 0,
       "path": "data/tiles/6/36/25.json"
     },
@@ -1692,22 +1692,22 @@
       "path": "data/tiles/6/21/35.json"
     },
     "6/22/33": {
-      "cameras": 1,
+      "cameras": 2,
       "networks": 0,
       "path": "data/tiles/6/22/33.json"
     },
     "6/46/28": {
-      "cameras": 9,
+      "cameras": 53,
       "networks": 0,
       "path": "data/tiles/6/46/28.json"
     },
     "6/39/24": {
-      "cameras": 38,
+      "cameras": 87,
       "networks": 0,
       "path": "data/tiles/6/39/24.json"
     },
     "6/39/27": {
-      "cameras": 4,
+      "cameras": 7,
       "networks": 0,
       "path": "data/tiles/6/39/27.json"
     },
@@ -1717,17 +1717,17 @@
       "path": "data/tiles/6/46/15.json"
     },
     "6/48/20": {
-      "cameras": 91,
+      "cameras": 124,
       "networks": 0,
       "path": "data/tiles/6/48/20.json"
     },
     "6/57/24": {
-      "cameras": 4,
+      "cameras": 26,
       "networks": 0,
       "path": "data/tiles/6/57/24.json"
     },
     "6/43/27": {
-      "cameras": 1,
+      "cameras": 3,
       "networks": 0,
       "path": "data/tiles/6/43/27.json"
     },
@@ -1737,7 +1737,7 @@
       "path": "data/tiles/6/49/30.json"
     },
     "6/44/21": {
-      "cameras": 2,
+      "cameras": 7,
       "networks": 0,
       "path": "data/tiles/6/44/21.json"
     },
@@ -1747,22 +1747,22 @@
       "path": "data/tiles/6/15/21.json"
     },
     "6/39/25": {
-      "cameras": 60,
+      "cameras": 119,
       "networks": 0,
       "path": "data/tiles/6/39/25.json"
     },
     "6/60/20": {
-      "cameras": 3,
+      "cameras": 4,
       "networks": 0,
       "path": "data/tiles/6/60/20.json"
     },
     "6/51/30": {
-      "cameras": 3,
+      "cameras": 6,
       "networks": 0,
       "path": "data/tiles/6/51/30.json"
     },
     "6/52/25": {
-      "cameras": 11,
+      "cameras": 113,
       "networks": 0,
       "path": "data/tiles/6/52/25.json"
     },
@@ -1772,12 +1772,12 @@
       "path": "data/tiles/6/38/18.json"
     },
     "6/42/24": {
-      "cameras": 14,
+      "cameras": 18,
       "networks": 0,
       "path": "data/tiles/6/42/24.json"
     },
     "6/36/38": {
-      "cameras": 14,
+      "cameras": 16,
       "networks": 0,
       "path": "data/tiles/6/36/38.json"
     },
@@ -1787,7 +1787,7 @@
       "path": "data/tiles/6/19/41.json"
     },
     "6/19/30": {
-      "cameras": 1,
+      "cameras": 2,
       "networks": 0,
       "path": "data/tiles/6/19/30.json"
     },
@@ -1802,7 +1802,7 @@
       "path": "data/tiles/6/35/26.json"
     },
     "6/45/25": {
-      "cameras": 4,
+      "cameras": 54,
       "networks": 0,
       "path": "data/tiles/6/45/25.json"
     },
@@ -1812,12 +1812,12 @@
       "path": "data/tiles/6/32/25.json"
     },
     "6/40/26": {
-      "cameras": 9,
+      "cameras": 22,
       "networks": 0,
       "path": "data/tiles/6/40/26.json"
     },
     "6/18/40": {
-      "cameras": 1,
+      "cameras": 22,
       "networks": 0,
       "path": "data/tiles/6/18/40.json"
     },
@@ -1837,17 +1837,17 @@
       "path": "data/tiles/6/52/35.json"
     },
     "6/31/31": {
-      "cameras": 26,
+      "cameras": 53,
       "networks": 0,
       "path": "data/tiles/6/31/31.json"
     },
     "6/42/27": {
-      "cameras": 2,
+      "cameras": 4,
       "networks": 0,
       "path": "data/tiles/6/42/27.json"
     },
     "6/33/25": {
-      "cameras": 2,
+      "cameras": 7,
       "networks": 0,
       "path": "data/tiles/6/33/25.json"
     },
@@ -1862,27 +1862,27 @@
       "path": "data/tiles/6/17/31.json"
     },
     "6/24/32": {
-      "cameras": 19,
+      "cameras": 23,
       "networks": 0,
       "path": "data/tiles/6/24/32.json"
     },
     "6/28/25": {
-      "cameras": 8,
+      "cameras": 36,
       "networks": 0,
       "path": "data/tiles/6/28/25.json"
     },
     "6/22/35": {
-      "cameras": 5,
+      "cameras": 13,
       "networks": 0,
       "path": "data/tiles/6/22/35.json"
     },
     "6/41/22": {
-      "cameras": 1,
+      "cameras": 5,
       "networks": 0,
       "path": "data/tiles/6/41/22.json"
     },
     "6/47/28": {
-      "cameras": 1,
+      "cameras": 10,
       "networks": 0,
       "path": "data/tiles/6/47/28.json"
     },
@@ -1897,27 +1897,27 @@
       "path": "data/tiles/6/38/29.json"
     },
     "6/12/21": {
-      "cameras": 2,
+      "cameras": 6,
       "networks": 0,
       "path": "data/tiles/6/12/21.json"
     },
     "6/19/37": {
-      "cameras": 2,
+      "cameras": 32,
       "networks": 0,
       "path": "data/tiles/6/19/37.json"
     },
     "6/40/22": {
-      "cameras": 2,
+      "cameras": 7,
       "networks": 0,
       "path": "data/tiles/6/40/22.json"
     },
     "6/55/36": {
-      "cameras": 1,
+      "cameras": 2,
       "networks": 0,
       "path": "data/tiles/6/55/36.json"
     },
     "6/21/36": {
-      "cameras": 4,
+      "cameras": 17,
       "networks": 0,
       "path": "data/tiles/6/21/36.json"
     },
@@ -1927,32 +1927,32 @@
       "path": "data/tiles/6/26/24.json"
     },
     "6/45/22": {
-      "cameras": 1,
+      "cameras": 2,
       "networks": 0,
       "path": "data/tiles/6/45/22.json"
     },
     "6/20/23": {
-      "cameras": 4,
+      "cameras": 8,
       "networks": 0,
       "path": "data/tiles/6/20/23.json"
     },
     "6/38/32": {
-      "cameras": 4,
+      "cameras": 22,
       "networks": 0,
       "path": "data/tiles/6/38/32.json"
     },
     "6/52/26": {
-      "cameras": 156,
+      "cameras": 175,
       "networks": 0,
       "path": "data/tiles/6/52/26.json"
     },
     "6/50/27": {
-      "cameras": 4,
+      "cameras": 25,
       "networks": 0,
       "path": "data/tiles/6/50/27.json"
     },
     "6/18/33": {
-      "cameras": 1,
+      "cameras": 4,
       "networks": 0,
       "path": "data/tiles/6/18/33.json"
     },
@@ -1982,7 +1982,7 @@
       "path": "data/tiles/6/29/27.json"
     },
     "6/38/31": {
-      "cameras": 1,
+      "cameras": 7,
       "networks": 0,
       "path": "data/tiles/6/38/31.json"
     },
@@ -1992,7 +1992,7 @@
       "path": "data/tiles/6/40/27.json"
     },
     "6/16/30": {
-      "cameras": 1,
+      "cameras": 3,
       "networks": 0,
       "path": "data/tiles/6/16/30.json"
     },
@@ -2002,7 +2002,7 @@
       "path": "data/tiles/6/44/31.json"
     },
     "6/15/29": {
-      "cameras": 6,
+      "cameras": 14,
       "networks": 0,
       "path": "data/tiles/6/15/29.json"
     },
@@ -2012,7 +2012,7 @@
       "path": "data/tiles/6/2/16.json"
     },
     "6/51/21": {
-      "cameras": 1,
+      "cameras": 2,
       "networks": 0,
       "path": "data/tiles/6/51/21.json"
     },
@@ -2022,12 +2022,12 @@
       "path": "data/tiles/6/50/33.json"
     },
     "6/58/36": {
-      "cameras": 4,
+      "cameras": 16,
       "networks": 0,
       "path": "data/tiles/6/58/36.json"
     },
     "6/20/40": {
-      "cameras": 1,
+      "cameras": 9,
       "networks": 0,
       "path": "data/tiles/6/20/40.json"
     },
@@ -2037,12 +2037,12 @@
       "path": "data/tiles/6/22/30.json"
     },
     "6/37/31": {
-      "cameras": 4,
+      "cameras": 12,
       "networks": 0,
       "path": "data/tiles/6/37/31.json"
     },
     "6/47/23": {
-      "cameras": 2,
+      "cameras": 4,
       "networks": 0,
       "path": "data/tiles/6/47/23.json"
     },
@@ -2057,7 +2057,7 @@
       "path": "data/tiles/6/34/14.json"
     },
     "6/43/20": {
-      "cameras": 78,
+      "cameras": 79,
       "networks": 0,
       "path": "data/tiles/6/43/20.json"
     },
@@ -2067,7 +2067,7 @@
       "path": "data/tiles/6/21/30.json"
     },
     "6/57/22": {
-      "cameras": 3,
+      "cameras": 5,
       "networks": 0,
       "path": "data/tiles/6/57/22.json"
     },
@@ -2077,17 +2077,17 @@
       "path": "data/tiles/6/43/18.json"
     },
     "6/57/29": {
-      "cameras": 1,
+      "cameras": 2,
       "networks": 0,
       "path": "data/tiles/6/57/29.json"
     },
     "6/51/26": {
-      "cameras": 1,
+      "cameras": 3,
       "networks": 0,
       "path": "data/tiles/6/51/26.json"
     },
     "6/57/23": {
-      "cameras": 2,
+      "cameras": 13,
       "networks": 0,
       "path": "data/tiles/6/57/23.json"
     },
@@ -2112,7 +2112,7 @@
       "path": "data/tiles/6/23/33.json"
     },
     "6/28/29": {
-      "cameras": 4,
+      "cameras": 6,
       "networks": 0,
       "path": "data/tiles/6/28/29.json"
     },
@@ -2122,7 +2122,7 @@
       "path": "data/tiles/6/38/30.json"
     },
     "6/49/27": {
-      "cameras": 1,
+      "cameras": 5,
       "networks": 0,
       "path": "data/tiles/6/49/27.json"
     },
@@ -2132,12 +2132,12 @@
       "path": "data/tiles/6/52/31.json"
     },
     "6/32/30": {
-      "cameras": 2,
+      "cameras": 8,
       "networks": 0,
       "path": "data/tiles/6/32/30.json"
     },
     "6/45/27": {
-      "cameras": 5,
+      "cameras": 14,
       "networks": 0,
       "path": "data/tiles/6/45/27.json"
     },
@@ -2147,12 +2147,12 @@
       "path": "data/tiles/6/4/28.json"
     },
     "6/39/29": {
-      "cameras": 1,
+      "cameras": 3,
       "networks": 0,
       "path": "data/tiles/6/39/29.json"
     },
     "6/22/34": {
-      "cameras": 1,
+      "cameras": 4,
       "networks": 0,
       "path": "data/tiles/6/22/34.json"
     },
@@ -2167,7 +2167,7 @@
       "path": "data/tiles/6/38/16.json"
     },
     "6/22/32": {
-      "cameras": 2,
+      "cameras": 4,
       "networks": 0,
       "path": "data/tiles/6/22/32.json"
     },
@@ -2197,17 +2197,17 @@
       "path": "data/tiles/6/55/37.json"
     },
     "6/44/25": {
-      "cameras": 1,
+      "cameras": 21,
       "networks": 0,
       "path": "data/tiles/6/44/25.json"
     },
     "6/38/33": {
-      "cameras": 1,
+      "cameras": 7,
       "networks": 0,
       "path": "data/tiles/6/38/33.json"
     },
     "6/49/19": {
-      "cameras": 15,
+      "cameras": 16,
       "networks": 0,
       "path": "data/tiles/6/49/19.json"
     },
@@ -2220,7 +2220,347 @@
       "cameras": 2,
       "networks": 0,
       "path": "data/tiles/6/3/28.json"
+    },
+    "6/39/26": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/39/26.json"
+    },
+    "6/34/26": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/34/26.json"
+    },
+    "6/39/28": {
+      "cameras": 4,
+      "networks": 0,
+      "path": "data/tiles/6/39/28.json"
+    },
+    "6/38/28": {
+      "cameras": 121,
+      "networks": 0,
+      "path": "data/tiles/6/38/28.json"
+    },
+    "6/33/31": {
+      "cameras": 12,
+      "networks": 0,
+      "path": "data/tiles/6/33/31.json"
+    },
+    "6/30/30": {
+      "cameras": 12,
+      "networks": 0,
+      "path": "data/tiles/6/30/30.json"
+    },
+    "6/37/27": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/37/27.json"
+    },
+    "6/40/30": {
+      "cameras": 4,
+      "networks": 0,
+      "path": "data/tiles/6/40/30.json"
+    },
+    "6/35/35": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/35/35.json"
+    },
+    "6/34/36": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/34/36.json"
+    },
+    "6/34/34": {
+      "cameras": 2,
+      "networks": 0,
+      "path": "data/tiles/6/34/34.json"
+    },
+    "6/36/37": {
+      "cameras": 3,
+      "networks": 0,
+      "path": "data/tiles/6/36/37.json"
+    },
+    "6/34/32": {
+      "cameras": 2,
+      "networks": 0,
+      "path": "data/tiles/6/34/32.json"
+    },
+    "6/37/32": {
+      "cameras": 17,
+      "networks": 0,
+      "path": "data/tiles/6/37/32.json"
+    },
+    "6/37/37": {
+      "cameras": 5,
+      "networks": 0,
+      "path": "data/tiles/6/37/37.json"
+    },
+    "6/37/35": {
+      "cameras": 11,
+      "networks": 0,
+      "path": "data/tiles/6/37/35.json"
+    },
+    "6/48/24": {
+      "cameras": 16,
+      "networks": 0,
+      "path": "data/tiles/6/48/24.json"
+    },
+    "6/53/24": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/53/24.json"
+    },
+    "6/46/22": {
+      "cameras": 5,
+      "networks": 0,
+      "path": "data/tiles/6/46/22.json"
+    },
+    "6/54/23": {
+      "cameras": 5,
+      "networks": 0,
+      "path": "data/tiles/6/54/23.json"
+    },
+    "6/53/23": {
+      "cameras": 2,
+      "networks": 0,
+      "path": "data/tiles/6/53/23.json"
+    },
+    "6/50/26": {
+      "cameras": 15,
+      "networks": 0,
+      "path": "data/tiles/6/50/26.json"
+    },
+    "6/51/25": {
+      "cameras": 21,
+      "networks": 0,
+      "path": "data/tiles/6/51/25.json"
+    },
+    "6/49/23": {
+      "cameras": 15,
+      "networks": 0,
+      "path": "data/tiles/6/49/23.json"
+    },
+    "6/54/22": {
+      "cameras": 3,
+      "networks": 0,
+      "path": "data/tiles/6/54/22.json"
+    },
+    "6/50/25": {
+      "cameras": 4,
+      "networks": 0,
+      "path": "data/tiles/6/50/25.json"
+    },
+    "6/49/24": {
+      "cameras": 34,
+      "networks": 0,
+      "path": "data/tiles/6/49/24.json"
+    },
+    "6/56/22": {
+      "cameras": 2,
+      "networks": 0,
+      "path": "data/tiles/6/56/22.json"
+    },
+    "6/51/24": {
+      "cameras": 6,
+      "networks": 0,
+      "path": "data/tiles/6/51/24.json"
+    },
+    "6/46/26": {
+      "cameras": 3,
+      "networks": 0,
+      "path": "data/tiles/6/46/26.json"
+    },
+    "6/50/22": {
+      "cameras": 4,
+      "networks": 0,
+      "path": "data/tiles/6/50/22.json"
+    },
+    "6/43/21": {
+      "cameras": 2,
+      "networks": 0,
+      "path": "data/tiles/6/43/21.json"
+    },
+    "6/43/25": {
+      "cameras": 18,
+      "networks": 0,
+      "path": "data/tiles/6/43/25.json"
+    },
+    "6/41/23": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/41/23.json"
+    },
+    "6/11/20": {
+      "cameras": 18,
+      "networks": 0,
+      "path": "data/tiles/6/11/20.json"
+    },
+    "6/21/22": {
+      "cameras": 6,
+      "networks": 0,
+      "path": "data/tiles/6/21/22.json"
+    },
+    "6/22/22": {
+      "cameras": 3,
+      "networks": 0,
+      "path": "data/tiles/6/22/22.json"
+    },
+    "6/9/21": {
+      "cameras": 7,
+      "networks": 0,
+      "path": "data/tiles/6/9/21.json"
+    },
+    "6/16/21": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/16/21.json"
+    },
+    "6/13/21": {
+      "cameras": 3,
+      "networks": 0,
+      "path": "data/tiles/6/13/21.json"
+    },
+    "6/12/27": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/12/27.json"
+    },
+    "6/57/35": {
+      "cameras": 16,
+      "networks": 0,
+      "path": "data/tiles/6/57/35.json"
+    },
+    "6/62/39": {
+      "cameras": 9,
+      "networks": 0,
+      "path": "data/tiles/6/62/39.json"
+    },
+    "6/61/40": {
+      "cameras": 4,
+      "networks": 0,
+      "path": "data/tiles/6/61/40.json"
+    },
+    "6/62/38": {
+      "cameras": 10,
+      "networks": 0,
+      "path": "data/tiles/6/62/38.json"
+    },
+    "6/56/36": {
+      "cameras": 3,
+      "networks": 0,
+      "path": "data/tiles/6/56/36.json"
+    },
+    "6/57/36": {
+      "cameras": 10,
+      "networks": 0,
+      "path": "data/tiles/6/57/36.json"
+    },
+    "6/58/37": {
+      "cameras": 37,
+      "networks": 0,
+      "path": "data/tiles/6/58/37.json"
+    },
+    "6/56/35": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/56/35.json"
+    },
+    "6/58/35": {
+      "cameras": 6,
+      "networks": 0,
+      "path": "data/tiles/6/58/35.json"
+    },
+    "6/53/38": {
+      "cameras": 2,
+      "networks": 0,
+      "path": "data/tiles/6/53/38.json"
+    },
+    "6/59/38": {
+      "cameras": 3,
+      "networks": 0,
+      "path": "data/tiles/6/59/38.json"
+    },
+    "6/61/35": {
+      "cameras": 10,
+      "networks": 0,
+      "path": "data/tiles/6/61/35.json"
+    },
+    "6/54/34": {
+      "cameras": 13,
+      "networks": 0,
+      "path": "data/tiles/6/54/34.json"
+    },
+    "6/57/37": {
+      "cameras": 7,
+      "networks": 0,
+      "path": "data/tiles/6/57/37.json"
+    },
+    "6/61/41": {
+      "cameras": 3,
+      "networks": 0,
+      "path": "data/tiles/6/61/41.json"
+    },
+    "6/57/34": {
+      "cameras": 3,
+      "networks": 0,
+      "path": "data/tiles/6/57/34.json"
+    },
+    "6/19/36": {
+      "cameras": 2,
+      "networks": 0,
+      "path": "data/tiles/6/19/36.json"
+    },
+    "6/24/33": {
+      "cameras": 4,
+      "networks": 0,
+      "path": "data/tiles/6/24/33.json"
+    },
+    "6/25/43": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/25/43.json"
+    },
+    "6/25/32": {
+      "cameras": 125,
+      "networks": 0,
+      "path": "data/tiles/6/25/32.json"
+    },
+    "6/25/34": {
+      "cameras": 4,
+      "networks": 0,
+      "path": "data/tiles/6/25/34.json"
+    },
+    "6/21/31": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/21/31.json"
+    },
+    "6/21/34": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/21/34.json"
+    },
+    "6/19/32": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/19/32.json"
+    },
+    "6/19/40": {
+      "cameras": 2,
+      "networks": 0,
+      "path": "data/tiles/6/19/40.json"
+    },
+    "6/21/32": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/21/32.json"
+    },
+    "6/19/42": {
+      "cameras": 1,
+      "networks": 0,
+      "path": "data/tiles/6/19/42.json"
     }
   },
-  "total_cameras": 178674
+  "total_cameras": 336708
 }

@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-57.1966549, -14.7669492]}, "properties": {"man_made": "surveillance", "surveillance": "cctv", "surveillance:type": "ALPR", "surveillance:zone": "commercial"}}], "networks": []}

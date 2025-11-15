@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-109.8993118, 22.9015917]}, "properties": {"camera:mount": "wall", "camera:type": "dome", "level": "0", "man_made": "surveillance", "source": "Bing", "surveillance": "outdoor", "surveillance:type": "camera", "surveillance:zone": "town"}}], "networks": []}
