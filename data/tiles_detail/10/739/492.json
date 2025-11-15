@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [79.88793, 6.8020279]}, "properties": {"id": 1185550582, "man_made": "surveillance", "name": "Rathmalana Check point", "surveillance": "public", "data_source": "planet_osm"}}], "networks": []}

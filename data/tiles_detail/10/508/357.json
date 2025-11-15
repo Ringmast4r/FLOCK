@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-1.166694, 47.742315]}, "properties": {"id": 1726678672, "camera:direction": "45", "camera:type": "fixed", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "camera", "surveillance:zone": "parking", "data_source": "planet_osm"}}], "networks": []}

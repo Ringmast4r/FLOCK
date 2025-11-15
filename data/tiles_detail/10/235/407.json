@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-97.1326543, 34.448078]}, "properties": {"camera:mount": "pole", "man_made": "surveillance", "operator": "Oklahoma Department of Transportation", "surveillance": "traffic", "surveillance:type": "camera", "surveillance:zone": "traffic"}}], "networks": []}

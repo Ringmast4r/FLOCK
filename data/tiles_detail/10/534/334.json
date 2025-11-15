@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [8.0431154, 52.8459146]}, "properties": {"id": 5677343237, "contact:website": "https://webcam-clp.de/", "man_made": "surveillance", "name": "Lange Stra\u00dfe", "surveillance": "webcam", "data_source": "planet_osm"}}], "networks": []}

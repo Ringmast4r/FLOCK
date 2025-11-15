@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-103.4700549, 43.4205632]}, "properties": {"camera:type": "fixed", "direction": "200", "man_made": "surveillance", "manufacturer": "Motorola Solutions", "manufacturer:wikidata": "Q634815", "surveillance:type": "ALPR"}}], "networks": []}

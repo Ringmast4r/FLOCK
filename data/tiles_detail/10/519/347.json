@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [2.5131465, 49.9088547]}, "properties": {"id": 2604545812, "man_made": "surveillance", "source": "Bing", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-80.592254, -5.187974]}, "properties": {"id": 8328301560, "man_made": "surveillance", "name": "Puesto de Auxilio R\u00e1pido - Serenazgo", "surveillance": "public", "surveillance:type": "guard", "surveillance:zone": "public", "data_source": "planet_osm"}}], "networks": []}

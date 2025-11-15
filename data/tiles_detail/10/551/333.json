@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [13.9557766, 52.9881409]}, "properties": {"id": 3107052619, "man_made": "surveillance", "name": "kuh Webcam", "website": "http://www.kuh-cam.de/", "data_source": "planet_osm"}}], "networks": []}

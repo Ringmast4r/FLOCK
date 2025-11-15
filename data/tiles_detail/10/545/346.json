@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [11.9108438, 50.2853455]}, "properties": {"id": 2426668161, "man_made": "surveillance", "name": "Untreusee Webcam", "surveillance": "indoor", "data_source": "planet_osm"}}], "networks": []}

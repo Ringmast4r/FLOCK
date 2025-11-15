@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [11.4910617, 64.0178552]}, "properties": {"id": 1491968159, "man_made": "surveillance", "name": "Esso", "source": "gps", "surveillance": "outdoor", "data_source": "planet_osm"}}], "networks": []}

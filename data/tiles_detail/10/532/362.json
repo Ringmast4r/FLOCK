@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [7.2038712, 46.3267759]}, "properties": {"id": 4803069996, "contact:webcam": "https://glacier3000.roundshot.com/", "man_made": "surveillance", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

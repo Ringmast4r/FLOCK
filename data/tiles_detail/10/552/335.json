@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [14.2640869, 52.5611081]}, "properties": {"id": 6579746218, "description": "forest fire surveillance", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "camera", "surveillance:zone": "forest", "data_source": "planet_osm"}}], "networks": []}

@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-52.0804618, -23.6003714]}, "properties": {"id": 3388181551, "camera:mount": "pole", "man_made": "surveillance", "operator": "Viapar", "surveillance": "public", "surveillance:type": "camera", "surveillance:zone": "traffic", "data_source": "planet_osm"}}], "networks": []}

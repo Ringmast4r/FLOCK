@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-7.738802, 54.9473002]}, "properties": {"id": 790254474, "man_made": "surveillance", "name": "Letterkenny CCTV", "surveillance": "public", "data_source": "planet_osm"}}], "networks": []}

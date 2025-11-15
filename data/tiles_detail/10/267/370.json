@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-85.9986531, 44.5235509]}, "properties": {"camera:direction": "166", "camera:type": "fixed", "man_made": "surveillance", "operator": "Crystal Mountain", "surveillance:type": "camera", "surveillance:zone": "Ski Resort"}}], "networks": []}

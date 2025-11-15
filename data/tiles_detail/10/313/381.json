@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-69.9570147, 41.6797611]}, "properties": {"contact:webcam": "https://www.thesquire.com/chatham-squire-main-street-webcam", "man_made": "surveillance", "surveillance": "webcam", "surveillance:type": "camera"}}], "networks": []}

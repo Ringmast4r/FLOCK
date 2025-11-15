@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [54.7289263, 24.7794488]}, "properties": {"id": 4487494191, "man_made": "surveillance", "name": "IPKZ870", "name:en": "IPKZ870", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

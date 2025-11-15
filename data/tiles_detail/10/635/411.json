@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [43.2654599, 33.4206607]}, "properties": {"id": 7372904786, "man_made": "surveillance", "data_source": "planet_osm"}}], "networks": []}

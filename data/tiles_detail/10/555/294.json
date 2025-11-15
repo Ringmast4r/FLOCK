@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [15.3458304, 60.5280126]}, "properties": {"id": 2802192102, "man_made": "surveillance", "name": "Testplats Amsberg", "operator": "ITS Dalarna", "source": "local_knowledge", "data_source": "planet_osm"}}], "networks": []}

@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [60.151882, 55.136312]}, "properties": {"id": 5971241075, "man_made": "surveillance", "surveillance": "public", "surveillance:type": "camera", "website": "http://k-itv.ru/camera/%D1%81amera3/", "data_source": "planet_osm"}}], "networks": []}

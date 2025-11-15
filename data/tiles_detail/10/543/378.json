@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [11.2041807, 42.3935027]}, "properties": {"id": 2974365058, "man_made": "surveillance", "name": "Varco ZTL", "surveillance:type": "camera", "surveillance:zone": "traffic", "data_source": "planet_osm"}}], "networks": []}

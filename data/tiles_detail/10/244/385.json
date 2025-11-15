@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-93.9446632, 40.5687881]}, "properties": {"camera:mount": "post", "camera:type": "fixed", "direction": "200", "electricity": "solar", "man_made": "surveillance", "surveillance": "public", "surveillance:type": "ALPR", "surveillance:zone": "traffic"}}], "networks": []}

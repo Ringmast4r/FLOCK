@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-105.9672309, 36.6452173]}, "properties": {"camera:mount": "pole", "camera:type": "dome", "man_made": "surveillance", "operator": "NMDOT", "surveillance": "traffic", "surveillance:type": "camera", "surveillance:zone": "traffic"}}], "networks": []}

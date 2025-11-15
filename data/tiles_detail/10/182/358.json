@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-115.6943312, 47.4535112]}, "properties": {"camera:mount": "pole", "camera:type": "dome", "man_made": "surveillance", "operator": "Montana Department of Transportation", "surveillance:type": "camera", "surveillance:zone": "traffic"}}], "networks": []}

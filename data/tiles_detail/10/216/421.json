@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.0493545, 30.2515087]}, "properties": {"camera:mount": "mast", "man_made": "surveillance", "surveillance": "outdoor", "unsigned_ref:US:eff": "Tower547"}}], "networks": []}

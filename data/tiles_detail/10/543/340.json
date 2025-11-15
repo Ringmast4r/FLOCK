@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [11.1086914, 51.4136653]}, "properties": {"id": 617751535, "camera:angle": "360", "camera:tilt": "-90", "check_date": "2023-04-30", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

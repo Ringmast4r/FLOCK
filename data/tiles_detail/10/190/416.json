@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-112.88192, 31.92797]}, "properties": {"camera:mount": "mast", "description": "Integrated Fixed Tower (IFT)", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "camera;radar", "unsigned_ref:US:eff": "Tower069"}}], "networks": []}

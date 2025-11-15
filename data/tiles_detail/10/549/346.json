@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [13.3012219, 50.0826912]}, "properties": {"id": 1599467834, "man_made": "surveillance", "name": "Objekt MV - Balkov\u00e1", "ref:cobe": "167061", "ref:zsj": "167061", "source": "survey", "data_source": "planet_osm"}}], "networks": []}

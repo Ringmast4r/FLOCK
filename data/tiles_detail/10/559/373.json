@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [16.6370925, 43.702098]}, "properties": {"id": 903748489, "man_made": "surveillance", "name": "Nadzorna kamera", "data_source": "planet_osm"}}], "networks": []}

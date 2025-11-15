@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-97.7938189, 27.0155977]}, "properties": {"camera:mount": "mast", "description": "Remote Video Surveillance System (RVSS)", "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "camera", "unsigned_ref:US:eff": "Tower241"}}], "networks": []}

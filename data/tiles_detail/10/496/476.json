@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-5.4708535, 12.381501]}, "properties": {"id": 4034621790, "man_made": "surveillance", "surveillance": "Studio Photo chez Ouattara", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [23.7258532, 55.1380024]}, "properties": {"id": 5050902887, "camera:mount": "pole", "camera:type": "fixed", "man_made": "surveillance", "surveillance": "public", "surveillance:type": "camera", "surveillance:zone": "traffic", "data_source": "planet_osm"}}], "networks": []}

@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-4.9562307, 36.5372547]}, "properties": {"id": 1008057810, "man_made": "surveillance", "name": "Presa la Concepci\u00f3n", "surveillance": "indoor", "data_source": "planet_osm"}}], "networks": []}

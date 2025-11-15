@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-72.8164816, 45.2792955]}, "properties": {"camera:type": "dome", "man_made": "surveillance", "name": "Josee", "surveillance": "outdoor", "surveillance:type": "camera"}}], "networks": []}

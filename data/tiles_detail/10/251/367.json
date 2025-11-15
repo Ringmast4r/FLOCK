@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-91.5804124, 45.2207319]}, "properties": {"camera:type": "fixed", "direction": "300", "man_made": "surveillance", "manufacturer": "Flock Safety", "manufacturer:wikidata": "Q108485435", "operator": "Barron Co Sheriff", "surveillance:type": "ALPR"}}], "networks": []}

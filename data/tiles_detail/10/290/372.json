@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-77.9886606, 44.0111628]}, "properties": {"camera:direction": "172", "camera:mount": "pole", "camera:type": "dome", "man_made": "surveillance", "surveillance": "traffic", "surveillance:type": "camera", "surveillance:zone": "Highway 401 Westbound"}}], "networks": []}

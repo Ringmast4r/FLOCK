@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [12.5696985, 54.4527567]}, "properties": {"id": 1692220062, "description": "Kamera", "man_made": "surveillance", "website": "https://prerow.de/prerowbilder/kurbetrieb/webcam-prerow.jpg", "data_source": "planet_osm"}}], "networks": []}

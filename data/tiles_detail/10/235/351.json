@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-97.240648, 48.9946851]}, "properties": {"camera:mount": "gantry", "man_made": "surveillance", "surveillance": "traffic", "surveillance:type": "camera"}}], "networks": []}

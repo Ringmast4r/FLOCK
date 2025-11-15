@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [7.5193921, 49.7743905]}, "properties": {"id": 4908093796, "man_made": "surveillance", "source": "bing", "surveillance": "outdoor", "website": "http://www.flugsportverein-kirn.de/drupal-6.13-DE/node/268", "data_source": "planet_osm"}}], "networks": []}

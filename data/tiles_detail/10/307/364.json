@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-71.9608355, 46.0610041]}, "properties": {"camera:type": "fixed", "man_made": "surveillance", "operator": "CIUSSS MCQ", "surveillance": "outdoor", "surveillance:zone": "parking,building"}}], "networks": []}

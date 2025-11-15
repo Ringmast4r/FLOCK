@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [0.6180748, 41.6075722]}, "properties": {"id": 2726235314, "man_made": "surveillance", "name": "Radar Semafor", "surveillance": "red_light", "surveillance:type": "camera", "data_source": "planet_osm"}}], "networks": []}

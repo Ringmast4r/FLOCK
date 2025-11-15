@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-91.9237322, 44.7822549]}, "properties": {"direction": "-145", "man_made": "surveillance", "surveillance:type": "ALPR"}}], "networks": []}

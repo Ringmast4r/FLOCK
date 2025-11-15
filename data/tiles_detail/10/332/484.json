@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-63.1831701, 9.7470322]}, "properties": {"id": 2136683977, "crossing": "traffic_signals", "highway": "traffic_signals", "man_made": "surveillance", "data_source": "planet_osm"}}], "networks": []}

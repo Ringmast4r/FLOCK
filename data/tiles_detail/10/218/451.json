@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-103.3505271, 20.7190915]}, "properties": {"id": 4737356951, "camera:direction": "360", "man_made": "surveillance", "surveillance": "public", "surveillance:type": "camera", "surveillance:zone": "police", "data_source": "planet_osm"}}], "networks": []}

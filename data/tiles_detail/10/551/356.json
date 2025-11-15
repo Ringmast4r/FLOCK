@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [13.8195068, 47.9757906]}, "properties": {"id": 1592491174, "amenity": "vending_machine", "man_made": "surveillance", "name": "Purfit Laakirchen", "payment:coins": "yes", "payment:notes": "yes", "vending": "cigarettes", "data_source": "planet_osm"}}], "networks": []}

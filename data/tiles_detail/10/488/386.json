@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-8.152045, 40.1817662]}, "properties": {"id": 5887514892, "man_made": "surveillance", "surveillance": "outdoor", "surveillance:type": "bank", "surveillance:zone": "bank", "data_source": "planet_osm"}}], "networks": []}

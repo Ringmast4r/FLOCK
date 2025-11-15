@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [9.3609049, 61.9118727]}, "properties": {"id": 1491968162, "man_made": "surveillance", "operator": "Circle K", "surveillance": "outdoor", "data_source": "planet_osm"}}], "networks": []}

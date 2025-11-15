@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [24.425809, 59.3082307]}, "properties": {"id": 3600835297, "highway": "street_lamp", "man_made": "surveillance", "data_source": "planet_osm"}}], "networks": []}

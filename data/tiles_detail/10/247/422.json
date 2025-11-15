@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-93.0801046, 30.126529]}, "properties": {"camera:type": "fixed", "direction": "180;0", "man_made": "surveillance", "manufacturer": "Neology, Inc.", "surveillance:type": "ALPR"}}], "networks": []}

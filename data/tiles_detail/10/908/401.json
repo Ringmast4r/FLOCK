@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [139.5254996, 36.2846899]}, "properties": {"id": 5930348117, "camera:mount": "pole", "camera:type": "panning", "man_made": "surveillance", "surveillance:type": "camera", "surveillance:zone": "waterway", "data_source": "planet_osm"}}], "networks": []}

@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-96.4259647, 30.1469826]}, "properties": {"brand": "Flock Safety", "brand:wikidata": "Q108485435", "man_made": "surveillance", "surveillance": "public", "surveillance:type": "gunshot_detector"}}], "networks": []}

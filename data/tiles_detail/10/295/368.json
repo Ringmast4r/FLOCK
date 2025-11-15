@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-76.0238516, 44.9125875]}, "properties": {"man_made": "surveillance", "surveillance:type": "camera"}}], "networks": []}

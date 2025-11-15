@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [-77.033036, 39.9881514]}, "properties": {"camera:mount": "pole", "camera:type": "fixed", "man_made": "surveillance", "note": "Traffic Law camera legal sign posted", "surveillance": "traffic", "surveillance:type": "camera", "surveillance:zone": "traffic"}}], "networks": []}
