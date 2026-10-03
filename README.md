@@ -205,6 +205,7 @@ Want to add more cameras or improve the map?
 
 - **GitHub Issues**: Report bugs or request features
 - **DeFlock.me**: https://deflock.me/
+- **[FlockDetour](https://flockdetour.com/flock-camera-map)**: Free web and mobile ALPR camera maps for the US and Canada; camera-aware routing in the iOS/Android apps requires Pro.
 - **EFF**: https://www.eff.org/
 - **ACLU**: https://www.aclu.org/
 
